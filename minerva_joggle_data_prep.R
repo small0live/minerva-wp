@@ -158,36 +158,18 @@ aim <- read.csv("Metrics_AIM_2023-11-28T21_20_09.csv") %>%
   subset(!(Subject.Id %in% bad_Ids))
 
 
+
 #### put all joggle data frames into list
 
 df_list <- list(volt, pvt, nback, mpt, lot, dsst, bart, aim)
+
 
 #### merge all data frames in list
 
 joggle <- df_list %>% reduce(inner_join, by = 'Subject.Id')
 
 
-# Subset Data -------------------------------------------------------------
-
-## remove superfluous rows
-
-
-## remove incomplete/unwanted data
-
-
-# Handle Recoding / Reverse Coding ----------------------------------------
-
-
-
-# Individual Means and SDs ------------------------------------------------
-
-
-
-# Measure Reliability -----------------------------------------------------
-
-
-
-# Correlations ------------------------------------------------------------
+rm(volt, pvt, nback, mpt, lot, dsst, bart, aim)
 
 
 
