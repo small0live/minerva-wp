@@ -47,6 +47,18 @@ volt <- read.csv("Metrics_VOLT_2023-11-28T21_20_09.csv") %>%
   subset(!(Subject.Id %in% bad_Ids))
 
 
+#volt[c('date', 'VOLT_start_time')] <- str_split_fixed(volt$Task.start, 'T', 2)
+#volt[c('date', 'VOLT_end_time')] <- str_split_fixed(volt$Task.end, 'T', 2)
+#
+#df$time <- gsub("\\..*", "", df$time)
+#
+#df$time_format <- strptime(df$time, "%H:%M:%S")
+#
+#df <- df %>% 
+#  group_by(stageId) %>%
+#  mutate(diffSecs = cumsum(as.numeric(difftime(time_format, lag(time_format, 1, default = time_format[1]), unit = "secs"))),
+#         diffMins = cumsum(as.numeric(difftime(time_format, lag(time_format, 1, default = time_format[1]), unit = "mins"))))
+
 #### pvt
 
 pvt <- read.csv("Metrics_PVT_2023-11-28T21_20_09.csv") %>%
@@ -134,7 +146,7 @@ bart <- read.csv("Metrics_BART_2023-11-28T21_20_09.csv") %>%
          Accuracy.Score) %>%
   rename(BART_Task_Start = "Task.start",
          BART_Task.end = "Task.end",
-         BART_Accuracy.Score = "Accuracy.Score") %>%
+         BART_Accuracy_Score = "Accuracy.Score") %>%
   subset(!(Subject.Id %in% bad_Ids))
 
 
@@ -169,12 +181,41 @@ df_list <- list(volt, pvt, nback, mpt, lot, dsst, bart, aim)
 joggle <- df_list %>% reduce(inner_join, by = 'Subject.Id')
 
 
+#### remove individual data frames from environment
 rm(volt, pvt, nback, mpt, lot, dsst, bart, aim)
+
+
+# Get Test Duration for MPT, VOLT, AM, LOT, BART --------------------------
+
 
 
 
 # Visualize Distributions -------------------------------------------------
 
+#### efficiency scores
+
+efficiency <- joggle %>% select(contains(c("Subject.Id", "Efficiency")))
+
+ggplot(gather(efficiency, key = "test", value = "measurement", -Subject.Id),
+       aes(measurement, fill = test)) +
+  geom_histogram(binwidth = 100) +
+  facet_wrap(~test) +
+  xlab("Efficiency Score") +
+  ylab("Count") +
+  theme_bw() +
+  theme(legend.position = "none")
 
 
+#### mean reaction time
+
+reaction <- joggle %>% select(contains(c("Subject.Id", "mean_RT")))
+
+ggplot(gather(reaction, key = "test", value = "measurement", -Subject.Id),
+       aes(measurement, fill = test)) +
+  geom_histogram(binwidth = 1000) +
+  facet_wrap(~test) +
+  xlab("Reaction Time") +
+  ylab("Count") +
+  theme_bw() +
+  theme(legend.position = "none")
 
