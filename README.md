@@ -1,2 +1,3 @@
-# minerva-wp
- files for minerva word puzzle exp
+# Minerva Project: Word Puzzles Experiment Data
+ 
+ R code files for data preparation and summarization
