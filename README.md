@@ -8,7 +8,7 @@ Qualtrics was used to adminster a set of measures of individual attributes in ad
 
 ### Psychological Collectivism
 
-A 15-item measure of psychological collectivism developed and validated by Jackson and colleagues (2006) was used in the study. The measure captures five facets of of collectvism: preference, reliance, concern, norm acceptance, and goal priority  (3 items per facet). Responses can be assessed a the scale level (single variable) or facet level (five variables). Responses are provided on a 5-point Likert-type scale ranging from strongly disagree to strongly agree. 
+A 15-item measure of psychological collectivism developed and validated by Jackson and colleagues (2006) was used in the study. The measure captures five facets of of collectvism: preference, reliance, concern, norm acceptance, and goal priority  (3 items per facet). Responses can be assessed at the scale level (single variable) or facet level (five variables). Responses are provided on a 5-point Likert-type scale ranging from strongly disagree to strongly agree. 
 
 According to Jackson et al. (2006):
 * Perference and concern facets are relevant to cooperation as they "create a sense of attraction in the group"
@@ -26,10 +26,15 @@ According to Jackson et al. (2006):
 
 ### Personality
 
+The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues was used in the study. 
+
+
 ### Team Processes
 
  ## Joggle Cognition Battery Data
 
 ## References
+
+Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.
 
 Jackson, C. L., Colquitt, J. A., Wesson, M. J., & Zapata-Phelan, C. P. (2006). Psychological collectivism: A measurement validation and linkage to group member performance. Journal of Applied Psychology, 91(4), 884.
