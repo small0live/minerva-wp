@@ -26,7 +26,7 @@ According to Jackson et al. (2006):
 
 ### Personality
 
-The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues was used in the study. 
+The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues (2003) was used in the study. 
 
 
 ### Team Processes
