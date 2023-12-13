@@ -56,13 +56,13 @@ The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues (2
 Responses are provided on a 7-point Likert-type scale ranging from strongly disagree to strongly agree. A subset of the items need to be reverse scored: 2, 4, 6, 8, and 10. Mean ratings of the two items for each personality scale are used to produce scores
 
 Recode as follows:
-7 = 1
-6 = 2
-5 = 3
-4 = 4
-3 = 5
-2 = 6
-1 = 7
+* 7 = 1
+* 6 = 2
+* 5 = 3
+* 4 = 4
+* 3 = 5
+* 2 = 6
+* 1 = 7
 
 
 | Label  | Item  | Scale |
@@ -77,7 +77,7 @@ Recode as follows:
 | TIPI_8* | Disorganized, careless. | Conscientiousness |
 | TIPI_9 | Calm, emotionally stable. | Emotional Stability |
 |TIPI_10* |  Conventional, uncreative. | Openness to Experiences |
-*Indicates reverse-scored item.
+Asterik denotes reverse-scored item.
 
 
 Additional information is available at this [link](https://gosling.psy.utexas.edu/scales-weve-developed/ten-item-personality-measure-tipi/).
