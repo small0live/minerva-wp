@@ -53,7 +53,7 @@ The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues (2
 
 *Scoring*
 
-Responses are provided on a 7-point Likert-type scale ranging from strongly disagree to strongly agree. A subset of the items need to be reverse scored: 2, 4, 6, 8, and 10. Mean ratings of the two items for each personality scale are used to produce scores
+Responses are provided on a 7-point Likert-type scale ranging from strongly disagree to strongly agree. A subset of the items need to be reverse scored: 2, 4, 6, 8, and 10. Mean ratings of the two items for each personality scale are used to calculate scores (see table below).
 
 Recode as follows:
 * 7 = 1
