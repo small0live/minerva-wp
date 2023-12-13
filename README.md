@@ -77,6 +77,7 @@ Recode as follows:
 | TIPI_8* | Disorganized, careless. | Conscientiousness |
 | TIPI_9 | Calm, emotionally stable. | Emotional Stability |
 |TIPI_10* |  Conventional, uncreative. | Openness to Experiences |
+
 Asterik denotes reverse-scored item.
 
 
