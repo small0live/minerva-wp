@@ -15,7 +15,7 @@ According to Jackson et al. (2006):
 * Goal priority and reliance facets are relevant to cooperation as they "facilitate the development of interdependence"
 * Norm acceptance facet is relevant to cooperation, specifically prosocial behavior
 
-**Scoring**
+*Scoring*
 
 Responses are provided on a 5-point Likert-type scale ranging from strongly disagree to strongly agree, and can be assessed at the scale level (single variable) or facet level (five variables). 
 Mean ratings, at the scale or facet level, are used to determine level of collectivism, where a higher value indicates greater collectivism. 
@@ -51,7 +51,7 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues (2003) was used in the study. The TIPI is used to measure the Big-Five personality dimensions: Extraversion, Agreeableness, Conscientiousness, Emotional Stability, Openness to Experiences.
 
-**Scoring**
+*Scoring*
 
 Responses are provided on a 7-point Likert-type scale ranging from strongly disagree to strongly agree. A subset of the items need to be reverse scored: 2, 4, 6, 8, and 10. Mean ratings of the two items for each personality scale are used to produce scores
 
@@ -67,16 +67,16 @@ Recode as follows:
 
 | Label  | Item  | Scale |
 | :------------- | :------------- | :------------- |
-| TIPI_1 | Extraverted, enthusiastic. | Extraversion |
-| TIPI_2* | Critical, quarrelsome. | Agreeableness |
-| TIPI_3 | Dependable, self-disciplined. | Conscientiousness |
-| TIPI_4* | Anxious, easily upset. | Emotional Stability |
-| TIPI_5 | Open to new experiences, complex. | Openness to Experiences |
-| TIPI_6* | Reserved, quiet. | Extraversion |
-| TIPI_7 | Sympathetic, warm. | Agreeableness |
-| TIPI_8* | Disorganized, careless. | Conscientiousness |
-| TIPI_9 | Calm, emotionally stable. | Emotional Stability |
-|TIPI_10* |  Conventional, uncreative. | Openness to Experiences |
+| TIPI_1 | Extraverted, enthusiastic | Extraversion |
+| TIPI_2* | Critical, quarrelsome | Agreeableness |
+| TIPI_3 | Dependable, self-disciplined | Conscientiousness |
+| TIPI_4* | Anxious, easily upset | Emotional Stability |
+| TIPI_5 | Open to new experiences, complex | Openness to Experiences |
+| TIPI_6* | Reserved, quiet | Extraversion |
+| TIPI_7 | Sympathetic, warm | Agreeableness |
+| TIPI_8* | Disorganized, careless | Conscientiousness |
+| TIPI_9 | Calm, emotionally stable | Emotional Stability |
+| TIPI_10* |  Conventional, uncreative | Openness to Experiences |
 
 Asterik denotes reverse-scored item.
 
