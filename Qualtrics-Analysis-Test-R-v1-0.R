@@ -93,13 +93,13 @@ print(bad_pids)
 bad_pid_list <- c("999", "9999", "Ooo", "oli1", "oli2", "M101", "M103", "MP11") 
 
 pilotdata_frame <- read.csv("minerva-puzzle-pilot-data-qualtrics-clean1.csv") %>%
-  select(contains(c("pid", "session", "Condition", 
+  select(contains(c("pid", "session", "Condition",  
                     "age",
                     "gender",
                     #"race_ethnicity",
                     #"class_standing",
                     #"major",
-                    "collectivism", 
+                    "collectivism", # you can use contains to identify all columns with a common substring
                     "dominance",
                     "stress", 
                     "workload",
