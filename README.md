@@ -16,7 +16,7 @@ According to Jackson et al. (2006):
 * Norm acceptance facet is relevant to cooperation, specifically prosocial behavior
 
 | Label  | Item  | Facet |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- |
 | collectivism_1  | I preferred to work in those groups rather than working alone.  | preference  |
 | collectivism_2  | Working in those groups was better than working alone.  | preference  |
 | collectivism_3  | I wanted to work with those groups as opposed to working alone.  | preference  |
