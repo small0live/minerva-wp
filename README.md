@@ -16,7 +16,7 @@ According to Jackson et al. (2006):
 * Norm acceptance facet is relevant to cooperation, specifically prosocial behavior
 
 | Label  | Item  | Facet |
-| ------------- | ------------- | ------------- |
+| :------------- | :------------- | ------------- |
 | collectivism_1  | I preferred to work in those groups rather than working alone.  | preference  |
 | collectivism_2  | Working in those groups was better than working alone.  | preference  |
 | collectivism_3  | I wanted to work with those groups as opposed to working alone.  | preference  |
@@ -33,7 +33,7 @@ According to Jackson et al. (2006):
 | collectivism_14  | I emphasized the goals of those groups more than my individual goals.  | goal priority  | 
 | collectivism_15  | Group goals were more important to me than my personal goals.  | goal priority  | 
 
-Collectivism was measured at two points in the study. The data labels include information about measurement time. For example, for the item "I preferred to work in those groups rather than working alone.", the data are labeled collectivism_t1_1 and collectivism_t2_1 to represent time 1 and time 2 measurements. 
+Collectivism was measured at two points in the study. The data labels include information about measurement time. For example, for the item "I preferred to work in those groups rather than working alone.", the data are labeled collectivism_t1_1 and collectivism_t2_1 to represent time 1 and time 2 measurements, respectively. 
 
 ### Sociable and Aggressive Dominance
 
