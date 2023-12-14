@@ -45,7 +45,8 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 ### Stress
 
-A validated single item stress scale (Booth et al., 2022) was used in the study. Responses to the question “*Overall, how would you rate your current level of stress?*” are provided on a 5-point Likert-type scale: 1 = No stress at all, 2 = Very little stress, 3 = Some stress, 4 = A lot of stress, 5 = A great deal of stress).
+A validated single item stress scale (Booth et al., 2022) was used in the study. Responses to the question “*Overall, how would you rate your current level of stress?*” are provided on a 5-point Likert-type scale: 1 = No stress at all, 2 = Very little stress, 3 = Some stress, 4 = A lot of stress, 5 = A great deal of stress. According to Booth et al. (2002), perceived stress, as measured using this scale, is positively associated with state and trait anxiety, negative affect, and neuroticism and negatively associated with positive affect.
+
 
 ### Workload
 
