@@ -17,7 +17,7 @@ According to Jackson et al. (2006):
 
 *Scoring*
 
-Responses are provided on a 5-point Likert-type scale ranging from strongly disagree to strongly agree, and can be assessed at the scale level (single variable) or facet level (five variables). 
+Responses are provided on a 5-point Likert-type scale ranging from strongly disagree (1) to strongly agree (5), and can be assessed at the scale level (single variable) or facet level (five variables). 
 Mean ratings, at the scale or facet level, are used to determine level of collectivism, where a higher value indicates greater collectivism. 
 
 | Label  | Item  | Facet |
@@ -43,6 +43,18 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 ### Theory of Mind
 
+
+Individual differences in mentalizing ability was assessed using the 36-item Reading the Mind in the Eyes Test (Baron-Cohen et al., 2001). For each item, a pair of eyes is displayed and participants choose one of four word options that describes the
+expression being conveyed.  
+
+*Scoring*
+
+Responses are scored as correct (1) or incorrect (0), and the percentage correct across all items is used to determine mentalizing ability. 
+
+![](images/rmet_practice.png)
+*A practice item provided in the RME test.*
+
+
 ### Stress
 
 A validated single item stress scale (Booth et al., 2022) was used in the study. Responses to the question “*Overall, how would you rate your current level of stress?*” are provided on a 5-point Likert-type scale: 1 = No stress at all, 2 = Very little stress, 3 = Some stress, 4 = A lot of stress, 5 = A great deal of stress. According to Booth et al. (2002), perceived stress, as measured using this scale, is positively associated with state and trait anxiety, negative affect, and neuroticism and negatively associated with positive affect.
@@ -50,7 +62,7 @@ A validated single item stress scale (Booth et al., 2022) was used in the study.
 
 ### Workload
 
-
+A single item workload scale (Fiore et al., 2017) was used in the study. Responses to the question "How easy or difficult was it to complete the task?" are provided on a 7-point Likert-type scale ranging from very easy (1) to very difficult (7).
 
 ### Personality
 
@@ -96,7 +108,12 @@ Additional information is available at this [link](https://gosling.psy.utexas.ed
 
 ## References
 
+Baron-Cohen, S., Wheelwright, S., Hill, J., Raste, Y., & Plumb, I. (2001). The “Reading the Mind in the Eyes” Test Revised Version: A study with normal adults, and adults with Asperger Syndrome or high-functioning Autism. The Journal of Child Psychology and Psychiatry and Allied Disciplines, 42(2), 241–251.
+
+
 Booth, B. M., Vrzakova, H., Mattingly, S. M., Martinez, G. J., Faust, L., & D’Mello, S. K. (2022). Toward Robust Stress Prediction in the Age of Wearables: Modeling Perceived Stress in a Longitudinal Study With Information Workers. IEEE Transactions on Affective Computing, 13(4), 2201–2217.
+
+Fiore, S. M., Warta, S. F., Best, A., Newton, O. B., & LaViola, J. J. (2017). Developing a theoretical framework of task complexity for research on visualization in support of decision making under uncertainty. Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 61(1), 1193–1197. 
 
 Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.
 
