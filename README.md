@@ -45,7 +45,11 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 ### Stress
 
+A validated single item stress scale (Booth et al., 2022) was used in the study. Responses to the question “*Overall, how would you rate your current level of stress?*” are provided on a 5-point Likert-type scale: 1 = No stress at all, 2 = Very little stress, 3 = Some stress, 4 = A lot of stress, 5 = A great deal of stress).
+
 ### Workload
+
+
 
 ### Personality
 
@@ -90,6 +94,8 @@ Additional information is available at this [link](https://gosling.psy.utexas.ed
  ## Joggle Cognition Battery Data
 
 ## References
+
+Booth, B. M., Vrzakova, H., Mattingly, S. M., Martinez, G. J., Faust, L., & D’Mello, S. K. (2022). Toward Robust Stress Prediction in the Age of Wearables: Modeling Perceived Stress in a Longitudinal Study With Information Workers. IEEE Transactions on Affective Computing, 13(4), 2201–2217.
 
 Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.
 
