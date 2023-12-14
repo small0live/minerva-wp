@@ -51,12 +51,10 @@ expression being conveyed.
 
 Responses are scored as correct (1) or incorrect (0), and the percentage correct across all items is used to determine mentalizing ability. 
 
-<p align="center">
 <figure>
-  <img src="img/rmet_practice.png" width=70% height=70%>
+  <img src="img/rmet_practice.png" width=70% height=70% align="center">
   <figcaption>A practice item provided in the RME test.</figcaption>
 </figure>
-</p>
 
 
 ### Stress
