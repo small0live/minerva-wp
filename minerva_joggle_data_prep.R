@@ -9,11 +9,8 @@
 # Load Packages -----------------------------------------------------------
 
 
-## Data Wrangling
+## Data Wrangling and Plotting
 library(tidyverse)
-
-## Plotting
-library(ggplot2)
 
 
 # Import Data -------------------------------------------------------------
