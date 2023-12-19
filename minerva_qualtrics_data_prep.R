@@ -37,8 +37,8 @@ df <- read.csv("Minerva_WP-Experiment-Pilot.csv") %>% # this is our Qualtrics fi
   # in this case the participant completed the survey and has a correctly formatted pilot subject ID, and was a SONA participant (based on exp log, SONA data collection began 11/16)
   # the & symbol indicates all conditions must be true for the row to be kept; == means we want an exact match; %like% is for regular expression matching (grep) and MP is the pattern to match
   # > means we want anything greater than, in this case any date after 11/15/2023
-  select(contains(c("StartDate",  # for now, we only need session and participant info in addition to survey responses so we'll only keep those columns; contains() allows us to identify all columns with a common substring (aka pattern)
-                    "session",
+  select(contains(c("StartDate",  # contains() allows us to identify all columns with a common substring (aka pattern); starts_with() is an alternative that checks the beginning of the string whereas contains() checks the entire string
+                    "session", # for now, we only need session and participant info in addition to survey responses so we'll only keep those columns
                     "condition",
                     "pid", 
                     "collectivism",
@@ -196,23 +196,25 @@ rm(tipi_r) # remove vector from global environment (we don't need it anymore)
 # Compute Scale and Facet/Subscale Scores ---------------------------------
 
 
-df <- df %>%
-  rowwise() %>%
-  mutate(collectivism_t1_mean = ,
-         collectivism_t2_mean = ,
-         socdom_t1_mean = ,
-         socdom_t2_mean = ,
-         aggdom_t1_mean = ,
-         aggdom_t2_mean = ,
-         TIPI_Extraversion = ,
-         TIPI_Agreeableness = ,
-         TIPI_Conscientious = ,
-         TIPI_Openness = ,
-         TIPI_EmotionalStability = ,
-         rmet_score = ,
+test <- df %>%
+  mutate(collectivism_t1_mean = select(., starts_with("collectivism_t1_")) %>% rowMeans(),
+         collectivism_t2_mean = select(., starts_with("collectivism_t1_")) %>% rowMeans(),
+         TIPI_Extraversion = select(., c("TIPI_1", "TIPI_6")) %>% rowMeans(),
+         TIPI_Agreeableness = select(., c("TIPI_2", "TIPI_7")) %>% rowMeans(),
+         TIPI_Conscientious = select(., c("TIPI_3", "TIPI_8")) %>% rowMeans(),
+         TIPI_Openness = select(., c("TIPI_5", "TIPI_10")) %>% rowMeans(),
+         TIPI_EmotionalStability = select(., c("TIPI_4", "TIPI_9")) %>% rowMeans(),
+         rmet_correct_count = select(., starts_with("rme")) %>% rowSums(),
+         rmet_correct_prop = rmet_correct_count/36,
          )
 
-rowMeans(.[4:15])
+#         socdom_t1_mean = ,
+#         socdom_t2_mean = ,
+#         aggdom_t1_mean = ,
+#         aggdom_t2_mean = ,
+#         )
+#
+
 
 #TIPI Scale Items
 #
