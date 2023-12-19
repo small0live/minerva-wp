@@ -67,7 +67,7 @@ A validated single item stress scale (Booth et al., 2022) was used in the study.
 
 ### Workload
 
-A single item workload scale (Fiore et al., 2017) was used in the study. Responses to the question "How easy or difficult was it to complete the task?" are provided on a 7-point Likert-type scale ranging from very easy (1) to very difficult (7).
+A single item workload scale (Fiore et al., 2017) was used in the study. Responses to the question "*How easy or difficult was it to complete the task?*" are provided on a 7-point Likert-type scale ranging from very easy (1) to very difficult (7).
 
 ### Personality
 
