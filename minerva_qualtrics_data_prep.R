@@ -196,14 +196,14 @@ rm(tipi_r) # remove vector from global environment (we don't need it anymore)
 # Compute Scale and Facet/Subscale Scores ---------------------------------
 
 
-test <- df %>%
+df <- df %>%
   mutate(collectivism_t1_mean = select(., starts_with("collectivism_t1_")) %>% rowMeans(),
          collectivism_t2_mean = select(., starts_with("collectivism_t1_")) %>% rowMeans(),
-         TIPI_Extraversion = select(., c("TIPI_1", "TIPI_6")) %>% rowMeans(),
-         TIPI_Agreeableness = select(., c("TIPI_2", "TIPI_7")) %>% rowMeans(),
-         TIPI_Conscientious = select(., c("TIPI_3", "TIPI_8")) %>% rowMeans(),
-         TIPI_Openness = select(., c("TIPI_5", "TIPI_10")) %>% rowMeans(),
-         TIPI_EmotionalStability = select(., c("TIPI_4", "TIPI_9")) %>% rowMeans(),
+         TIPI_Extraversion_score = select(., c("TIPI_1", "TIPI_6")) %>% rowMeans(),
+         TIPI_Agreeableness_score = select(., c("TIPI_2", "TIPI_7")) %>% rowMeans(),
+         TIPI_Conscientious_score = select(., c("TIPI_3", "TIPI_8")) %>% rowMeans(),
+         TIPI_Openness_score = select(., c("TIPI_5", "TIPI_10")) %>% rowMeans(),
+         TIPI_EmotionalStability_score = select(., c("TIPI_4", "TIPI_9")) %>% rowMeans(),
          rmet_correct_count = select(., starts_with("rme")) %>% rowSums(),
          rmet_correct_prop = rmet_correct_count/36,
          )
@@ -242,4 +242,19 @@ test <- df %>%
 
 
 
+# Visualize Means ---------------------------------------------------------
+
+
+means <- df %>% select(contains(c("mean", "prop", "score")))
+
+
+ggplot(gather(means, key = "measure", value),
+       aes(value, fill = measure)) +
+  geom_histogram() +
+  facet_wrap(~measure,
+             scales = "free") +
+  xlab("Value") +
+  ylab("Participant Count") +
+  theme_bw() +
+  theme(legend.position = "none")
 
