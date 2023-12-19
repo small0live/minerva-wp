@@ -7,15 +7,15 @@
 
 # Load Packages -----------------------------------------------------------
 
-# first we will get packages from our library
+# first we will get necessary packages from our library
 
-## Packages for Data Wrangling and Plotting
+## Packages for data wrangling and plotting
 library(tidyverse) # a suite of packages including dplyr and ggplot2, see https://www.tidyverse.org/ 
 library(data.table) # we'll use %like% from this package
 
 ## A couple packages for stats
 library(skimr) # easy computation of summary stats for quick check using the skim() function
-library(psych) # using alpha() for reliability
+library(psych) # using alpha() for reliability assessment
 
 
 # Import and Subset Data --------------------------------------------------
@@ -31,12 +31,12 @@ setwd("~/Documents/CSL/Minerva/Word_Puzzles_Experiment/minerva-wp") # update bas
 
 df <- read.csv("Minerva_WP-Experiment-Pilot.csv") %>% # this is our Qualtrics file
   # %>% is the pipe operator, it connects different pieces of code; we're using it to apply the below functions to the above data in sequence
-  slice(-c(1, 2)) %>% # we don't need the extra header rows provided by Qualtrics
-  subset(Progress == 100 & pid %like% "MP" & StartDate > "2023-11-15 00:00:00") %>% # we can use subset to conditionally select rows
+  slice(-c(1, 2)) %>% # we don't need the extra header rows provided by Qualtrics so we're removing them: we use c() to create/refer to a vector of row numbers we want removed and minus sign to indicate removal
+  subset(Progress == 100 & pid %like% "MP" & StartDate > "2023-11-15 00:00:00") %>% # we can use subset() to conditionally select rows based on column values
   # in this case the participant completed the survey and has a correctly formatted pilot subject ID, and was a SONA participant (based on exp log, SONA data collection began 11/16)
   # the & symbol indicates all conditions must be true for the row to be kept; == means we want an exact match; %like% is for regular expression matching (grep) and MP is the pattern to match
   # > means we want anything greater than, in this case any date after 11/15/2023
-  select(contains(c("StartDate",  # for now, we only need session and participant info in addition to survey responses so we'll only keep those columns; contains allows us to identify all columns with a common substring (aka pattern)
+  select(contains(c("StartDate",  # for now, we only need session and participant info in addition to survey responses so we'll only keep those columns; contains() allows us to identify all columns with a common substring (aka pattern)
                     "session",
                     "condition",
                     "pid", 
@@ -89,13 +89,16 @@ skim(df)
 
 # Get Reliability for Collectivism Scale ----------------------------------
 
+
 ### collectivism was measured at two time points, we so check both measurements separately
 
+### time 1 measurement
 collectivism_t1 <- df %>% select(contains("collectivism_t1"))
 
 alpha(collectivism_t1, check.keys = TRUE) # raw alpha is 0.87 (which is good, 0.7-0.8 is generally desired minimum level)
+  # from docs: for check.keys, if TRUE, then find the first principal component and reverse key items with negative loadings. Give a warning if this happens.
 
-
+### time 2 measurement
 collectivism_t2 <- df %>% select(contains("collectivism_t2"))
 
 alpha(collectivism_t2, check.keys = TRUE) # raw alpha is 0.88
@@ -110,13 +113,15 @@ alpha(collectivism_t2, check.keys = TRUE) # raw alpha is 0.88
 ### we'll inspect reliability at the scale first and subscale level second
 
 
-### scale level
+### overall scale level
 
+### time 1 measurement
 dominance_t1 <- df %>% select(contains("dominance_t1"))
 
 alpha(dominance_t1, check.keys = TRUE) # raw alpha is 0.82
   # something weird going on with item 15, Kalma et al. doesn't say this should be reverse coded but alpha wants to read it as such due to correlations
 
+### time 2 measurement
 dominance_t2 <- df %>% select(contains("dominance_t2"))
 
 alpha(dominance_t2, check.keys = TRUE) # raw alpha is 0.8
@@ -138,7 +143,7 @@ alpha(socialdom_t2, check.keys = TRUE) # raw alpha is 0.88
 aggdom_t1 <- dominance_t1[,9:15]
 
 alpha(aggdom_t1, check.keys = TRUE) # raw alpha is 0.69 (not ideal)
-  # item 15 doesn't automatically get reverse coded when we just check reliability as the subscale level, but the alpha is more acceptable if that item is dropped (0.72)
+  # item 15 doesn't automatically get reverse coded when we check reliability as the subscale level, but the alpha is more acceptable if that item is dropped (0.72)
 
 aggdom_t2 <- dominance_t2[,9:15]
 
