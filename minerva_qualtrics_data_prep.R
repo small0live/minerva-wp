@@ -198,7 +198,7 @@ rm(tipi_r) # remove vector from global environment (we don't need it anymore)
 
 df <- df %>%
   mutate(collectivism_t1_mean = select(., starts_with("collectivism_t1_")) %>% rowMeans(),
-         collectivism_t2_mean = select(., starts_with("collectivism_t1_")) %>% rowMeans(),
+         collectivism_t2_mean = select(., starts_with("collectivism_t2_")) %>% rowMeans(),
          TIPI_Extraversion_score = select(., c("TIPI_1", "TIPI_6")) %>% rowMeans(),
          TIPI_Agreeableness_score = select(., c("TIPI_2", "TIPI_7")) %>% rowMeans(),
          TIPI_Conscientious_score = select(., c("TIPI_3", "TIPI_8")) %>% rowMeans(),
@@ -245,7 +245,7 @@ df <- df %>%
 # Visualize Means ---------------------------------------------------------
 
 
-means <- df %>% select(contains(c("mean", "prop", "score")))
+means <- df %>% select(contains(c("condition", "mean", "prop", "score")))
 
 
 ggplot(gather(means, key = "measure", value),
@@ -257,4 +257,6 @@ ggplot(gather(means, key = "measure", value),
   ylab("Participant Count") +
   theme_bw() +
   theme(legend.position = "none")
+
+
 
