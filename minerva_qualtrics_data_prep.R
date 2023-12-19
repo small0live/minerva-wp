@@ -245,12 +245,12 @@ df <- df %>%
 # Visualize Means ---------------------------------------------------------
 
 
-means <- df %>% select(contains(c("condition", "mean", "prop", "score")))
+means <- df %>% select(contains(c("mean", "prop", "score")))
 
 
 ggplot(gather(means, key = "measure", value),
        aes(value, fill = measure)) +
-  geom_histogram() +
+  geom_histogram(bins = 5) +
   facet_wrap(~measure,
              scales = "free") +
   xlab("Value") +
