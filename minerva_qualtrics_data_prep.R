@@ -96,12 +96,14 @@ rm(col_nums) # remove vector from global environment (we don't need it anymore)
 ### collectivism was measured at two time points, we so check both measurements separately
 
 ### time 1 measurement
+
 collectivism_t1 <- df %>% select(contains("collectivism_t1"))
 
 alpha(collectivism_t1, check.keys = TRUE) # raw alpha is 0.87 (which is good, 0.7-0.8 is generally desired minimum level)
   # from docs: for check.keys, if TRUE, then find the first principal component and reverse key items with negative loadings. Give a warning if this happens.
 
 ### time 2 measurement
+
 collectivism_t2 <- df %>% select(contains("collectivism_t2"))
 
 alpha(collectivism_t2, check.keys = TRUE) # raw alpha is 0.88
@@ -195,60 +197,38 @@ rm(tipi_r) # remove vector from global environment (we don't need it anymore)
 
 # Compute Scale and Facet/Subscale Scores ---------------------------------
 
-
 df <- df %>%
   mutate(collectivism_t1_mean = select(., starts_with("collectivism_t1_")) %>% rowMeans(),
          collectivism_t2_mean = select(., starts_with("collectivism_t2_")) %>% rowMeans(),
+         socdom_t1_mean = select(., dominance_t1_1:dominance_t1_8) %>% rowMeans(),
+         socdom_t2_mean = select(., dominance_t2_1:dominance_t1_8) %>% rowMeans(),
+         aggdom_t1_mean = select(., dominance_t1_9:dominance_t2_15) %>% rowMeans(),
+         aggdom_t2_mean = select(., dominance_t2_9:dominance_t2_15) %>% rowMeans(),
          TIPI_Extraversion_score = select(., c("TIPI_1", "TIPI_6")) %>% rowMeans(),
          TIPI_Agreeableness_score = select(., c("TIPI_2", "TIPI_7")) %>% rowMeans(),
          TIPI_Conscientious_score = select(., c("TIPI_3", "TIPI_8")) %>% rowMeans(),
          TIPI_Openness_score = select(., c("TIPI_5", "TIPI_10")) %>% rowMeans(),
          TIPI_EmotionalStability_score = select(., c("TIPI_4", "TIPI_9")) %>% rowMeans(),
          rmet_correct_count = select(., starts_with("rme")) %>% rowSums(),
-         rmet_correct_prop = rmet_correct_count/36,
+         rmet_correct_prop = rmet_correct_count/36
          )
-
-#         socdom_t1_mean = ,
-#         socdom_t2_mean = ,
-#         aggdom_t1_mean = ,
-#         aggdom_t2_mean = ,
-#         )
-#
 
 
 #TIPI Scale Items
-#
-#Extraversion
-#TIPI_1
-#TIPI_6
-#
-#Agreeableness
-#TIPI_2
-#TIPI_7
-#
-#Conscientiousness
-#TIPI_3
-#TIPI_8
-#
-#Emotional Stability
-#TIPI_4
-#TIPI_9
-#
-#Openness to Experiences
-#TIPI_5
-#TIPI_10
-
-
-
+#Extraversion: TIPI_1, TIPI_6
+#Agreeableness TIPI_2, TIPI_7
+#Conscientiousness: TIPI_3, TIPI_8
+#Emotional Stability: TIPI_4, TIPI_9
+#Openness to Experiences: TIPI_5, TIPI_10
 
 
 # Visualize Means ---------------------------------------------------------
 
+df$Condition <- recode(df$Condition, "1" = "Nominal Group", "2" = "Real Group")
 
-means <- df %>% select(contains(c("mean", "prop", "score")))
+means <- df %>% select(contains(c("mean", "prop", "score", "Condition")))
 
-
-ggplot(gather(means, key = "measure", value),
+ggplot(gather(means, key = "measure", value, -Condition),
        aes(value, fill = measure)) +
   geom_histogram(bins = 5) +
   facet_wrap(~measure,
@@ -258,5 +238,14 @@ ggplot(gather(means, key = "measure", value),
   theme_bw() +
   theme(legend.position = "none")
 
+ggplot(gather(means, key = "measure", value, -Condition),
+       aes(value, fill = Condition, group = Condition)) +
+  geom_boxplot() +
+  facet_wrap(~measure,
+             scales = "free") +
+  xlab("Value") +
+  ylab("Participant Count") +
+  theme_bw() +
+  theme(legend.position = "top")
 
 
