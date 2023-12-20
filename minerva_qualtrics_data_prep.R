@@ -80,7 +80,7 @@ sapply(df, class) # apply class(), which returns data type, to all columns in th
 
 col_nums <- c(5:153) # create a vector for the column numbers we want make numeric
 
-df[col.col_numsnums] <- sapply(df[col_nums], as.numeric)  # apply as.numeric() to a subset of columns, specifically the column numbers in the vector we just made
+df[col_nums] <- sapply(df[col_nums], as.numeric)  # apply as.numeric() to a subset of columns, specifically the column numbers in the vector we just made
 sapply(df, class) # make sure it worked
 
 ### now let's check the data at the column level
