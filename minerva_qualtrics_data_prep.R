@@ -108,6 +108,7 @@ collectivism_t2 <- df %>% select(contains("collectivism_t2"))
 
 alpha(collectivism_t2, check.keys = TRUE) # raw alpha is 0.88
 
+rm(collectivism_t1, collectivism_t2)
 
 # Get Reliability for Dominance Scales ------------------------------------
 
@@ -163,6 +164,7 @@ alpha(aggdom_t2, check.keys = TRUE) # raw alpha is 0.72
   # interestingly, alpha doesn't improve when item 15 is dropped for time 2 measurement of the aggressive subscale
 
 
+rm(socialdom_t1, socialdom_t2, aggdom_t1, aggdom_t2, dominance_t1, dominance_t2)
 
 # Reverse Score Items -----------------------------------------------------
 
@@ -214,21 +216,21 @@ df <- df %>%
          )
 
 
-#TIPI Scale Items
-#Extraversion: TIPI_1, TIPI_6
-#Agreeableness TIPI_2, TIPI_7
-#Conscientiousness: TIPI_3, TIPI_8
-#Emotional Stability: TIPI_4, TIPI_9
-#Openness to Experiences: TIPI_5, TIPI_10
+# TIPI Scale Items
+# Extraversion: TIPI_1, TIPI_6
+# Agreeableness TIPI_2, TIPI_7
+# Conscientiousness: TIPI_3, TIPI_8
+# Openness to Experiences: TIPI_5, TIPI_10
+# Emotional Stability: TIPI_4, TIPI_9
 
 
 # Visualize Means ---------------------------------------------------------
 
 df$Condition <- recode(df$Condition, "1" = "Nominal Group", "2" = "Real Group")
 
-means <- df %>% select(contains(c("mean", "prop", "score", "Condition")))
+scores <- df %>% select(contains(c("mean", "prop", "score", "Condition")))
 
-ggplot(gather(means, key = "measure", value, -Condition),
+ggplot(gather(scores, key = "measure", value, -Condition),
        aes(value, fill = measure)) +
   geom_histogram(bins = 5) +
   facet_wrap(~measure,
@@ -238,7 +240,7 @@ ggplot(gather(means, key = "measure", value, -Condition),
   theme_bw() +
   theme(legend.position = "none")
 
-ggplot(gather(means, key = "measure", value, -Condition),
+ggplot(gather(scores, key = "measure", value, -Condition),
        aes(value, fill = Condition, group = Condition)) +
   geom_boxplot() +
   facet_wrap(~measure,
