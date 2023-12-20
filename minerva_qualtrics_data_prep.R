@@ -224,6 +224,13 @@ df <- df %>%
 # Emotional Stability: TIPI_4, TIPI_9
 
 
+
+# Save Data ---------------------------------------------------------------
+
+#write.csv(df,
+#          "Minerva_WP-Experiment-Pilot_withScores.csv",
+#          row.names = F)
+
 # Visualize Means ---------------------------------------------------------
 
 df$Condition <- recode(df$Condition, "1" = "Nominal Group", "2" = "Real Group")
@@ -249,5 +256,8 @@ ggplot(gather(scores, key = "measure", value, -Condition),
   ylab("Participant Count") +
   theme_bw() +
   theme(legend.position = "top")
+
+
+
 
 
