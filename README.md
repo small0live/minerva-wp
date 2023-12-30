@@ -45,21 +45,21 @@ A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The m
 
 | Label  | Item  | Subscale |
 | :------------- | :------------- | :------------- |
-| dominance_1 | I have no problems talking in front of a group. | sociable dominance |
-| dominance_2 | At school I found it easy to talk in front of the class. | sociable dominance |
-| dominance_3 | No doubt I’ll make a good leader. | sociable dominance |
-| dominance_4 | I certainly have self-confidence. | sociable dominance |
-| dominance_5 | For me it is not hard to start a conversation in a group. | sociable dominance |
-| dominance_6 | I am not shy with strangers. | sociable dominance |
-| dominance_7 | I like taking responsibility. | sociable dominance |
-| dominance_8 | People turn to me for decisions. | sociable dominance |
-| dominance_9 | I can look everybody in the eye, and lie with a straight face. | aggressive dominance |
-| dominance_10 | I can lie without anybody noticing it. | aggressive dominance |
-| dominance_11 | I find it important to get my way. | aggressive dominance |
-| dominance_12 | I find it important to get my way, even if this causes a row. | aggressive dominance |
-| dominance_13 | I quickly feel aggressive with people. | aggressive dominance |
-| dominance_14 | I make smart, sarcastic remarks if people deserve it. | aggressive dominance |
-| dominance_15 | I’d rather be disliked (for being unkind) and that people look down on me (for not achieving my aims). | aggressive dominance |
+| dominance_1 | I have no problems talking in front of a group. | sociable |
+| dominance_2 | At school I found it easy to talk in front of the class. | sociable |
+| dominance_3 | No doubt I’ll make a good leader. | sociable |
+| dominance_4 | I certainly have self-confidence. | sociable |
+| dominance_5 | For me it is not hard to start a conversation in a group. | sociable |
+| dominance_6 | I am not shy with strangers. | sociable |
+| dominance_7 | I like taking responsibility. | sociable |
+| dominance_8 | People turn to me for decisions. | sociable |
+| dominance_9 | I can look everybody in the eye, and lie with a straight face. | aggressive |
+| dominance_10 | I can lie without anybody noticing it. | aggressive |
+| dominance_11 | I find it important to get my way. | aggressive |
+| dominance_12 | I find it important to get my way, even if this causes a row. | aggressive |
+| dominance_13 | I quickly feel aggressive with people. | aggressive |
+| dominance_14 | I make smart, sarcastic remarks if people deserve it. | aggressive  |
+| dominance_15 | I’d rather be disliked (for being unkind) and that people look down on me (for not achieving my aims). | aggressive |
 
 
 *Scoring*
