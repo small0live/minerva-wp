@@ -41,7 +41,7 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 ### Sociable and Aggressive Dominance
 
-A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The measure captures to distinct forms of dominane: sociable (8 items) and aggressive (7 items). Dominance was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I have no problems talking in front of a group.*", the data are labeled dominance_t1_1 and dominance_t2_1 to represent time 1 and time 2 measurements, respectively. 
+A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The measure captures two distinct forms of dominane: sociable (8 items) and aggressive (7 items). Dominance was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I have no problems talking in front of a group.*", the data are labeled dominance_t1_1 and dominance_t2_1 to represent time 1 and time 2 measurements, respectively. 
 
 | Label  | Item  | Subscale |
 | :------------- | :------------- | :------------- |
