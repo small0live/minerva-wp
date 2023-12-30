@@ -41,6 +41,32 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 ### Sociable and Aggressive Dominance
 
+A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The measure captures to distinct forms of dominane: sociable (8 items) and aggressive (7 items). Dominance was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I have no problems talking in front of a group.*", the data are labeled dominance_t1_1 and dominance_t2_1 to represent time 1 and time 2 measurements, respectively. 
+
+| Label  | Item  | Subscale |
+| :------------- | :------------- | :------------- |
+| dominance_1 | I have no problems talking in front of a group. | sociable dominance |
+| dominance_2 | At school I found it easy to talk in front of the class. | sociable dominance |
+| dominance_3 | No doubt I’ll make a good leader. | sociable dominance |
+| dominance_4 | I certainly have self-confidence. | sociable dominance |
+| dominance_5 | For me it is not hard to start a conversation in a group. | sociable dominance |
+| dominance_6 | I am not shy with strangers. | sociable dominance |
+| dominance_7 | I like taking responsibility. | sociable dominance |
+| dominance_8 | People turn to me for decisions. | sociable dominance |
+| dominance_9 | I can look everybody in the eye, and lie with a straight face. | aggressive dominance |
+| dominance_10 | I can lie without anybody noticing it. | aggressive dominance |
+| dominance_11 | I find it important to get my way. | aggressive dominance |
+| dominance_12 | I find it important to get my way, even if this causes a row. | aggressive dominance |
+| dominance_13 | I quickly feel aggressive with people. | aggressive dominance |
+| dominance_14 | I make smart, sarcastic remarks if people deserve it. | aggressive dominance |
+| dominance_15 | I’d rather be disliked (for being unkind) and that people look down on me (for not achieving my aims). | aggressive dominance |
+
+
+*Scoring*
+
+Responses are provided on a 7-point Likert-type scale ranging from strongly disagree to strongly agree and should be assessed at the subscale level. Mean ratings are used to determine level of dominance, where a higher value indicates higher dominance. 
+
+
 ### Theory of Mind
 
 
@@ -123,3 +149,5 @@ Fiore, S. M., Warta, S. F., Best, A., Newton, O. B., & LaViola, J. J. (2017). De
 Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.
 
 Jackson, C. L., Colquitt, J. A., Wesson, M. J., & Zapata-Phelan, C. P. (2006). Psychological collectivism: A measurement validation and linkage to group member performance. Journal of Applied Psychology, 91(4), 884.
+
+Kalma, A. P., Visser, L., & Peeters, A. (1993). Sociable and aggressive dominance: Personality differences in leadership style?. The Leadership Quarterly, 4(1), 45-64.
