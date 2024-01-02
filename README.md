@@ -1,6 +1,6 @@
 # Minerva Project: Word Puzzles Experiment Data
  
- This repo contains R code files for data preparation and summarization associated with the word puzzles experiment conducted under the Minerva project. Supplementary information about the measures data is available in [this Google Sheet](https://docs.google.com/spreadsheets/d/156uiHYXigYihKN6WHiC477xpLJ7OpeY8GpnTeZHYblo/edit?usp=sharing).
+ This repo contains R code files for data preparation and summarization associated with the word puzzles experiment conducted under the Minerva project. Supplementary information about the data is available in [this Google Sheet](https://docs.google.com/spreadsheets/d/156uiHYXigYihKN6WHiC477xpLJ7OpeY8GpnTeZHYblo/edit?usp=sharing).
 
  ## Qualtrics Survey Data
 
