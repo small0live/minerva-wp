@@ -4,14 +4,14 @@
 
  ## Qualtrics Survey Data
 
-Qualtrics was used to adminster a set of measures of individual attributes in addition to percecptions of team process. 
+Qualtrics was used to administer a set of measures of individual attributes in addition to perceptions of team process. Individual attribute measures include: psychological collectivism, dominance, theory of mind, and personality, and basic cognition. Participants were also asked to report stress and workload levels. Participants assigned to the real group condition additionally provided responses to a team process measure. 
 
 ### Psychological Collectivism
 
-A 15-item measure of psychological collectivism developed and validated by Jackson and colleagues (2006) was used in the study. The measure captures five facets of of collectvism: preference, reliance, concern, norm acceptance, and goal priority  (3 items per facet). Collectivism was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I preferred to work in those groups rather than working alone.*", the data are labeled collectivism_t1_1 and collectivism_t2_1 to represent time 1 and time 2 measurements, respectively. 
+A 15-item measure of psychological collectivism developed and validated by Jackson and colleagues (2006) was used in the study. The measure captures five facets of of collectivism: preference, reliance, concern, norm acceptance, and goal priority  (3 items per facet). Collectivism was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I preferred to work in those groups rather than working alone.*", the data are labeled collectivism_t1_1 and collectivism_t2_1 to represent time 1 and time 2 measurements, respectively. 
 
 According to Jackson et al. (2006):
-* Perference and concern facets are relevant to cooperation as they "create a sense of attraction in the group"
+* Preference and concern facets are relevant to cooperation as they "create a sense of attraction in the group"
 * Goal priority and reliance facets are relevant to cooperation as they "facilitate the development of interdependence"
 * Norm acceptance facet is relevant to cooperation, specifically prosocial behavior
 
@@ -41,7 +41,7 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 ### Sociable and Aggressive Dominance
 
-A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The measure captures two distinct forms of dominane: sociable (8 items) and aggressive (7 items). Dominance was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I have no problems talking in front of a group.*", the data are labeled dominance_t1_1 and dominance_t2_1 to represent time 1 and time 2 measurements, respectively. 
+A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The measure captures two distinct forms of dominance: sociable (8 items) and aggressive (7 items). Dominance was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I have no problems talking in front of a group.*", the data are labeled dominance_t1_1 and dominance_t2_1 to represent time 1 and time 2 measurements, respectively. 
 
 | Label  | Item  | Subscale |
 | :------------- | :------------- | :------------- |
@@ -86,15 +86,6 @@ Responses are scored as correct (1) or incorrect (0), and the percentage correct
 </div>
 
 
-### Stress
-
-A validated single item stress scale (Booth et al., 2022) was used in the study. Responses to the question “*Overall, how would you rate your current level of stress?*” are provided on a 5-point Likert-type scale: 1 = No stress at all, 2 = Very little stress, 3 = Some stress, 4 = A lot of stress, 5 = A great deal of stress. According to Booth et al. (2002), perceived stress, as measured using this scale, is positively associated with state and trait anxiety, negative affect, and neuroticism and negatively associated with positive affect.
-
-
-### Workload
-
-A single item workload scale (Fiore et al., 2017) was used in the study. Responses to the question "*How easy or difficult was it to complete the task?*" are provided on a 7-point Likert-type scale ranging from very easy (1) to very difficult (7).
-
 ### Personality
 
 The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues (2003) was used in the study. The TIPI is used to measure the Big-Five personality dimensions: Extraversion, Agreeableness, Conscientiousness, Emotional Stability, Openness to Experiences.
@@ -126,31 +117,47 @@ Recode as follows:
 | TIPI_9 | Calm, emotionally stable | Emotional Stability |
 | TIPI_10* |  Conventional, uncreative | Openness to Experiences |
 
-Asterik denotes reverse-scored item.
+Asterisk denotes reverse-scored item.
 
 
 Additional information is available at this [link](https://gosling.psy.utexas.edu/scales-weve-developed/ten-item-personality-measure-tipi/).
 
 *Analysis*
 
-The effect of group personality composition can be assessed as a predictor of group effectiveness. 
+Group personality composition can be assessed as a predictor of group effectiveness. 
 
-* Prior research suggests there is negative relationship between the variance of personality scores in a group and group effectiveness such that heterogenous groups are less effective and homogenous groups are more effective (Halfhill et al., 2005).
+* Prior research suggests there is negative relationship between the variance of personality scores within a group and group effectiveness such that heterogeneous groups are less effective and homogeneous groups are more effective (Halfhill et al., 2005). 
+  * Mechanism: heterogeneity is associated with conflict.
+  * Operationalizing heterogeneity: (1) variance of individual scores, (2) range of individual scores, or (3) proportion of team members that posses a trait 
+* Minimum and maximum scores can also potentially be have predictive utility under the assumption that one individual can significantly affect group outcome. It is suggested that, for problem solving groups, the max score can be used in analysis.
+* For collaborative work, it is expected that relationship-oriented traits will be important: agreeableness and emotional stability (Halfhill et al., 2005). 
+
+
+## Joggle Cognition Battery Data
+
+
+### Stress
+
+A validated single item stress scale (Booth et al., 2022) was used in the study. Responses to the question “*Overall, how would you rate your current level of stress?*” are provided on a 5-point Likert-type scale: 1 = No stress at all, 2 = Very little stress, 3 = Some stress, 4 = A lot of stress, 5 = A great deal of stress. According to Booth et al. (2002), perceived stress, as measured using this scale, is positively associated with state and trait anxiety, negative affect, and neuroticism and negatively associated with positive affect.
+
+
+### Workload
+
+A single item workload scale (Fiore et al., 2017) was used in the study. Responses to the question "*How easy or difficult was it to complete the task?*" are provided on a 7-point Likert-type scale ranging from very easy (1) to very difficult (7).
+
 
 ### Team Processes
-
- ## Joggle Cognition Battery Data
 
 ## References
 
 Baron-Cohen, S., Wheelwright, S., Hill, J., Raste, Y., & Plumb, I. (2001). The “Reading the Mind in the Eyes” Test Revised Version: A study with normal adults, and adults with Asperger Syndrome or high-functioning Autism. The Journal of Child Psychology and Psychiatry and Allied Disciplines, 42(2), 241–251.
 
 
-Booth, B. M., Vrzakova, H., Mattingly, S. M., Martinez, G. J., Faust, L., & D’Mello, S. K. (2022). Toward Robust Stress Prediction in the Age of Wearables: Modeling Perceived Stress in a Longitudinal Study With Information Workers. IEEE Transactions on Affective Computing, 13(4), 2201–2217.
+Booth, B. M., Vrzakova, H., Mattingly, S. M., Martinez, G. J., Faust, L., & D’Mello, S. K. (2022). Toward robust stress prediction in the age of wearables: Modeling perceived stress in a longitudinal study With information workers. IEEE Transactions on Affective Computing, 13(4), 2201–2217.
 
 Fiore, S. M., Warta, S. F., Best, A., Newton, O. B., & LaViola, J. J. (2017). Developing a theoretical framework of task complexity for research on visualization in support of decision making under uncertainty. Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 61(1), 1193–1197. 
 
-Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.
+Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A very brief measure of the big five personality domains. Journal of Research in Personality, 37, 504-528.
 
 Halfhill, T., Sundstrom, E., Lahner, J., Calderone, W., & Nielsen, T. M. (2005). Group personality composition and group effectiveness: An integrative review of empirical research. Small Group Research, 36(1), 83–105.
 
