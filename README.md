@@ -1,10 +1,10 @@
 # Minerva Project: Word Puzzles Experiment Data
  
- This repo contains R code files for data preparation and summarization associated with the word puzzles experiment conducted under the Minerva project.
+ This repo contains R code files for data preparation and summarization associated with the word puzzles experiment conducted under the Minerva project. Supplementary information about the measures data is available in [this Google Sheet](https://docs.google.com/spreadsheets/d/156uiHYXigYihKN6WHiC477xpLJ7OpeY8GpnTeZHYblo/edit?usp=sharing).
 
  ## Qualtrics Survey Data
 
-Qualtrics was used to administer a set of measures of individual attributes in addition to perceptions of team process. Individual attribute measures include: psychological collectivism, dominance, theory of mind, and personality, and basic cognition. Participants were also asked to report stress and workload levels. Participants assigned to the real group condition additionally provided responses to a team process measure. 
+Qualtrics was used to administer a set of measures of individual attributes in addition to perceptions of team process. Individual attribute measures include: psychological collectivism, dominance, theory of mind, and personality. Participants were also asked to report stress and workload levels. Participants assigned to the real group condition additionally provided responses to a team process measure. 
 
 ### Psychological Collectivism
 
@@ -133,9 +133,6 @@ Group personality composition can be assessed as a predictor of group effectiven
 * For collaborative work, it is expected that relationship-oriented traits will be important: agreeableness and emotional stability (Halfhill et al., 2005). 
 
 
-## Joggle Cognition Battery Data
-
-
 ### Stress
 
 A validated single item stress scale (Booth et al., 2022) was used in the study. Responses to the question “*Overall, how would you rate your current level of stress?*” are provided on a 5-point Likert-type scale: 1 = No stress at all, 2 = Very little stress, 3 = Some stress, 4 = A lot of stress, 5 = A great deal of stress. According to Booth et al. (2002), perceived stress, as measured using this scale, is positively associated with state and trait anxiety, negative affect, and neuroticism and negatively associated with positive affect.
@@ -147,6 +144,15 @@ A single item workload scale (Fiore et al., 2017) was used in the study. Respons
 
 
 ### Team Processes
+
+
+## Joggle Cognition Battery Data
+
+The Joggle application was used to administer a cognition test battery. The battery contains # tests:
+
+### 
+
+
 
 ## References
 
