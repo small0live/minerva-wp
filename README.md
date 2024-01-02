@@ -131,7 +131,11 @@ Asterik denotes reverse-scored item.
 
 Additional information is available at this [link](https://gosling.psy.utexas.edu/scales-weve-developed/ten-item-personality-measure-tipi/).
 
+*Analysis*
 
+The effect of group personality composition can be assessed as a predictor of group effectiveness. 
+
+* Prior research suggests there is negative relationship between the variance of personality scores in a group and group effectiveness such that heterogenous groups are less effective and homogenous groups are more effective (Halfhill et al., 2005).
 
 ### Team Processes
 
@@ -147,6 +151,8 @@ Booth, B. M., Vrzakova, H., Mattingly, S. M., Martinez, G. J., Faust, L., & D’
 Fiore, S. M., Warta, S. F., Best, A., Newton, O. B., & LaViola, J. J. (2017). Developing a theoretical framework of task complexity for research on visualization in support of decision making under uncertainty. Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 61(1), 1193–1197. 
 
 Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.
+
+Halfhill, T., Sundstrom, E., Lahner, J., Calderone, W., & Nielsen, T. M. (2005). Group personality composition and group effectiveness: An integrative review of empirical research. Small Group Research, 36(1), 83–105.
 
 Jackson, C. L., Colquitt, J. A., Wesson, M. J., & Zapata-Phelan, C. P. (2006). Psychological collectivism: A measurement validation and linkage to group member performance. Journal of Applied Psychology, 91(4), 884.
 
