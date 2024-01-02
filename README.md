@@ -129,7 +129,7 @@ Group personality composition can be assessed as a predictor of group effectiven
 * Prior research suggests there is negative relationship between the variance of personality scores within a group and group effectiveness such that heterogeneous groups are less effective and homogeneous groups are more effective (Halfhill et al., 2005). 
   * Mechanism: heterogeneity is associated with conflict.
   * Operationalizing heterogeneity: (1) variance of individual scores, (2) range of individual scores, or (3) proportion of team members that posses a trait 
-* Minimum and maximum scores can also potentially be have predictive utility under the assumption that one individual can significantly affect group outcome. It is suggested that, for problem solving groups, the max score can be used in analysis.
+* Minimum and maximum scores can also potentially have predictive utility under the assumption that one individual can significantly affect group outcome. It is suggested that, for problem solving groups, the max score can be used in analysis.
 * For collaborative work, it is expected that relationship-oriented traits will be important: agreeableness and emotional stability (Halfhill et al., 2005). 
 
 
