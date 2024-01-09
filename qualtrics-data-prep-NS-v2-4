@@ -1,0 +1,437 @@
+## Minerva Puzzle Pilot - Qualtrics Data Prep & Summary
+## Word Puzzle Experiment
+## Minerva Project
+## Nathan A. Sonnenfeld
+## Version 2.4
+## Last Updated: 2023 Jan 05
+
+# scoring updated
+# current status: getting some errors in the scoring code, need to resolve
+
+
+
+############## STEP 0: FUNCTIONS & OPTIONS ############## 
+
+# in R nomenclature, what you are loading is the package - the collection of functions, data, etc. 
+# the library is where the package is stored
+# see https://stackoverflow.com/questions/26900228/what-is-the-difference-between-a-library-and-a-package-in-r 
+
+## Data Wrangling
+library(tidyverse)
+# library(dplyr) redundant - dplyr bundled in tidyverse
+
+## Plotting
+library(ggplot2)
+
+
+
+############## STEP 1: BRING IN DATA ############## 
+print("Step 1: Bring in Data")
+
+## Set working directory / folder
+## setwd('set path of data')
+## Import data
+
+setwd("C:/Users/sonne/Desktop/Minerva/Data Analysis/Data-Qualtrics/Data-Pilot-23Dec")
+print("Task Complete: set working directory")
+
+
+
+
+
+############## STEP 2: PREP DATA & CLEANING ############## 
+print("Step 2: Prep Data & Cleaning")
+
+
+### Step 2.1: FILTER OUT INCOMPLETES & DUPLICATES ##
+print("Task Start: Filter incompletes & duplicates")
+
+## Identify incomplete surveys (not timer info though)
+filter_frame <- read.csv("C:/Users/sonne/Desktop/Minerva/Data Analysis/Data-Qualtrics/Data-Pilot-23Dec/minerva-puzzle-pilot-data-qualtrics-clean1.csv") %>%
+  select(pid,
+         session,
+         Condition,
+         Finished) %>%
+  rename(pid = "pid",
+         session = "session",
+         condition = "Condition",
+         finished = "Finished") %>%
+mutate(finished = as.numeric(finished)) # Convert 'finished' to numeric
+print("Task Complete: Filter frame created")
+
+
+## Remove rows where specific columns are NA
+filter_frame <- filter_frame %>% 
+  filter(!is.na(finished))
+print("Task Complete: Remove NAs")
+
+
+## Check the structure of the data frame
+print("Here is the filter Frame structure:")
+str(filter_frame)
+
+## Check the first few rows of the data frame
+print("Here are the first few rows of the filter Frame:")
+head(filter_frame)
+
+## Create a subset where 'finished' is 0
+missingdata_pids <- filter(filter_frame, finished == 0)
+
+## Print the subset
+print("Here is a subset of rows where finished = 0 (not complete):")
+print(missingdata_pids)
+nrow(missingdata_pids)
+
+## Find the duplicated pids
+duplicated_pids <- filter_frame[duplicated(filter_frame$pid), "pid"]
+
+## Print the duplicated pids
+print("Here is a subset of duplicate pids:")
+print(duplicated_pids)
+nrow(duplicated_pids)
+
+## Create a data frame from duplicated pids
+duplicated_pids_df <- data.frame(pid = duplicated_pids)
+  
+## Combine missing data and duplicated pids into bad_pids
+bad_pids <- bind_rows(missingdata_pids, duplicated_pids_df)
+bad_pids <- distinct(bad_pids, pid) # Remove any duplicates in the combined set
+
+## Print bad_pid list for use in pilotdata_frame
+print("Bad PID list:s:")
+print(bad_pids)
+
+## If needed, manually removing rows 2 & 3 (potentially the bad_pids, consider linking to that list)
+# df <- df %>% slice(-c(2,3)) 
+
+bad_pid_list <- c("999", "9999", "Ooo", "oli1", "oli2", "M101", "M103", "MP11") 
+
+
+
+### Step 2.2: CREATE PILOT DATA FRAME ###
+
+print("Create pilotdata_frame")
+
+pilotdata_frame_prep <- read.csv("C:/Users/sonne/Desktop/Minerva/Data Analysis/Data-Qualtrics/Data-Pilot-23Dec/minerva-puzzle-pilot-data-qualtrics-clean1.csv") %>%
+  select("pid", "session", "Condition", "age", "gender",
+    contains(c(# you can use contains to identify all columns with a common substring
+
+                    #"race_ethnicity",
+                    #"class_standing",
+                    #"major",
+                    "collectivism", 
+                    "dominance",
+                    "stress", 
+                    "workload",
+                    "rme",
+                    "TIPI",
+                    "mission_analysis",
+                    "strategy_formulation",
+                    "monitoring_progress",
+                    "team_monitoring",
+                    "coordination",
+                    "conflict_management",
+                    "motivating",
+                    "goal_specification",
+                    "affect_management",
+                    "Submit"))) %>%
+  rename(#pid = "pid",
+         #session = "session",
+         condition = "Condition") %>%
+  subset(!(pid %in% bad_pid_list))
+
+## Check the structure of the data frame
+print("Here is the structure of the pilotdata_frame")
+str(pilotdata_frame_prep)
+
+
+## Check the first few rows of the data frame
+#  head(pilotdata_frame)
+
+## Output the pilotdata_frame
+output_file_path <- "C:/Users/sonne/Desktop/Minerva/Data Analysis/Data-Qualtrics/Data-Pilot-23Dec/Outputs/pilotdata_frame_prep.csv"
+
+## Write the combined data frame to a CSV file
+write.csv(pilotdata_frame_prep, output_file_path, row.names = FALSE)
+print("Saved pilotdata_frame_prep.csv")
+
+
+
+
+### Step 2.3: SCORING MEASURES IN DATA FRAME ###
+
+## Set up the Scoring Functions to Call ##
+
+# Function to reverse code specific items
+reverse_code <- function(data_frame, items, scale_max, scale_name) {
+  for (item in items) {
+    # Constructing the full column name
+    column_name <- paste0(scale_name, "_", item)
+    if(column_name %in% names(data_frame)) {
+      data_frame[[column_name]] <- scale_max - data_frame[[column_name]] + 1
+    } else {
+      warning(paste("Column", column_name, "not found in data frame for reverse coding."))
+    }
+  }
+  return(data_frame)
+}
+# General function to score a scale
+score_scale <- function(data_frame, scale_name, time, facet_details, reverse_items, scale_max) {
+  if (!is.null(reverse_items) && !is.null(scale_max)) {
+    data_frame <- reverse_code(data_frame, reverse_items, scale_max)
+  }
+
+  scale_prefix <- if (is.null(time)) {
+    scale_name
+  } else {
+    paste0(scale_name, "_", time, "_")
+  }
+
+  total_column_name <- if (is.null(time)) {
+    paste0(scale_name, "_tot")
+  } else {
+    paste0(scale_name, "_", time, "_tot")
+  }
+  data_frame[[total_column_name]] <- rowMeans(select(data_frame, starts_with(scale_prefix)), na.rm = TRUE)
+
+  for (facet_name in names(facet_details)) {
+    facet_range <- facet_details[[facet_name]]
+    facet_columns <- sapply(facet_range, function(i) paste0(scale_prefix, i))
+
+    facet_column_name <- if (is.null(time)) {
+      paste0(scale_name, "_", facet_name)
+    } else {
+      paste0(scale_name, "_", time, "_", facet_name)
+    }
+    data_frame[[facet_column_name]] <- rowMeans(data_frame[, facet_columns], na.rm = TRUE)
+  }
+
+  # Remove raw data columns
+#  raw_columns <- unlist(lapply(facet_details, function(range) sapply(range, function(i) paste0(scale_prefix, i))))
+#  data_frame <- data_frame[, !names(data_frame) %in% raw_columns]
+
+  return(data_frame)
+}
+
+# Function to score accuracy-based scales (like RMET) with a range of items
+score_accuracy <- function(data_frame, scale_name, start_item, end_item) {
+  # Generate column names based on the range
+  accuracy_items <- paste0(scale_name, start_item:end_item)
+  
+  # Check if all columns exist
+  if (!all(accuracy_items %in% names(data_frame))) {
+    stop("Some accuracy item columns do not exist in the data frame.")
+  }
+
+  # Calculate the percentage of correct responses (coded as "1")
+  accuracy_scores <- rowSums(data_frame[, accuracy_items] == 1, na.rm = TRUE) / length(accuracy_items) * 100
+  data_frame[[paste0(scale_name, "_accuracy_score")]] <- accuracy_scores
+  return(data_frame)
+}
+
+
+# Define a list of scales with their parameters and scoring method
+scales_to_score <- list(
+
+    # Add more scales in the same format as above
+# list(
+ #   scale_name = "xyz",
+ #   time = "t2",
+ #   facet_details = list(facetname = rage:range, etc.),  e.g., preference = 1:3
+ #   reverse_items = c("..."), define column name, else NULL
+ #   scale_max = ... (value, else NULL)
+ #   scoring_function = "score_scale OR score_accuracy" (the only two scoring functions included now)
+  # )
+
+  list(
+    scale_name = "collectivism",
+    time = "t1",
+    facet_details = list(preference = 1:3, reliance = 4:6, concern = 7:9, norm = 10:12, goal = 13:15),
+    reverse_items = NULL,
+    scale_max = NULL,
+    scoring_function = "score_scale"  # Specify the scoring function to use
+  ),
+ 
+ list(
+    scale_name = "collectivism",
+    time = "t2",
+    facet_details = list(preference = 1:3, reliance = 4:6, concern = 7:9, norm = 10:12, goal = 13:15),
+    reverse_items = NULL,
+    scale_max = NULL,
+    scoring_function = "score_scale"  # Specify the scoring function to use
+  ),
+
+list(
+    scale_name = "dominance",
+    time = "t1",
+    facet_details = list(sociable = 1:8, aggressive = 9:15),
+    reverse_items = NULL,
+    scale_max = NULL,
+    scoring_function = "score_scale"  # Specify the scoring function to use
+  ),
+
+list(
+    scale_name = "dominance",
+    time = "t2",
+    facet_details = list(sociable = 1:8, aggressive = 9:15),
+    reverse_items = NULL,
+    scale_max = NULL,
+    scoring_function = "score_scale"  # Specify the scoring function to use
+  ),
+
+list( 
+  scale_name = "TIPI",
+  time = NULL,
+  facet_details = list(extra = c(1, 6), agree = c(2, 7), consci = c(3, 8), emostab = c(4, 9), openxp = c(5, 10)),
+  reverse_items = c(2, 4, 6, 8, 10),
+  scale_max = 7,
+  scoring_function = "score_scale"  # Specify the scoring function to use
+  ),
+
+list(
+    scale_name = "rme", # Base name of columns
+    start_item = 1,  # Start of the RMET item range
+    end_item = 36,   # End of the RMET item range
+    scoring_function = "score_accuracy"  # Specify the scoring function for accuracy-based scales
+  )
+  
+)
+
+
+
+# Reading the data
+filepath <- "C:/Users/sonne/Desktop/Minerva/Data Analysis/Data-Qualtrics/Data-Pilot-23Dec/Outputs/pilotdata_frame_prep.csv"
+data_frame <- read.csv(filepath)
+
+# Apply scoring to each scale
+for (scale in scales_to_score) {
+  print(paste("Processing scale:", scale[['scale_name']]))
+
+
+  if (scale[['scoring_function']] == "score_scale") {
+    print(paste("Calling score_scale for", scale[['scale_name']]))
+    tryCatch({
+      data_frame <- score_scale(data_frame, scale[['scale_name']], scale[['time']], scale[['facet_details']], scale[['reverse_items']], scale[['scale_max']])
+    }, error = function(e) {
+      print(paste("Error in score_scale for", scale[['scale_name']], ":", e$message))
+    })
+  }
+
+  if (scale[['scoring_function']] == "score_accuracy") {
+    print(paste("Calling score_scale for", scale[['scale_name']]))
+    tryCatch({
+      data_frame <- score_scale(data_frame, scale['scale_name'], scale['start_item'], scale['end_item'])
+    }, error = function(e) {
+      print(paste("Error in score_scale for", scale[['scale_name']], ":", e$message))
+    })
+  }}
+
+# Write the final scored data to a single file
+output_filepath <- sub("\\.csv$", "_scored.csv", filepath)
+write.csv(data_frame, output_filepath, row.names = FALSE)
+print("Saved scored .csv file")
+
+  
+  
+
+
+
+
+
+
+
+############## SUPPLEMENTAL INFO ############## 
+
+
+# Collectivism  T1- Needs to be scored etc.
+#         collectivism_t1_1, collectivism_t1_2, collectivism_t1_3,
+#         collectivism_t1_4, collectivism_t1_5, collectivism_t1_6,
+#         collectivism_t1_7, collectivism_t1_8, collectivism_t1_9,
+#         collectivism_t1_10, collectivism_t1_11, collectivism_t1_12,
+#         collectivism_t1_13, collectivism_t1_14, collectivism_t1_15,
+#         
+# Dominance T1- Needs to be scored etc.
+#         dominance_t1_1, dominance_t1_2, dominance_t1_3,
+#         dominance_t1_4, dominance_t1_5, dominance_t1_6,
+#         dominance_t1_7, dominance_t1_8, dominance_t1_9,
+#         dominance_t1_10, dominance_t1_11, dominance_t1_12,
+#         dominance_t1_13, dominance_t1_14, dominance_t1_15,
+#         
+# Stress & Workload - Needs to be scored etc.
+#         stress,
+#         workload,
+#         
+# ToM / RMET
+#         rme1, rme2, rme3, rme4, rme5, rme6, rme7, rme8,
+#         rme9, rme10, rme11, rme12, rme13, rme14, rme15, rme16,
+#         rme17, rme18, rme19, rme20, rme21, rme22, rme23, rme24,
+#         rme25, rme26, rme27, rme28, rme29, rme30, rme31, rme32,
+#         rme33, rme34, rme35, rme36,
+#
+# Demographics
+#         age,
+#         gender,
+#         race_ethnicity,
+#         class_standing,
+#         major,
+#         
+# Collectivism  T2 - Needs to be scored etc.
+#         collectivism_t2_1, collectivism_t2_2, collectivism_t2_3,
+#         collectivism_t2_4,	collectivism_t2_5, collectivism_t2_6,
+#         collectivism_t2_7,	collectivism_t2_8, collectivism_t2_9,
+#         collectivism_t2_10, collectivism_t2_11, collectivism_t2_12,
+#         collectivism_t2_13, collectivism_t2_14, collectivism_t2_15,
+#         
+# Dominance  T2 - Needs to be scored etc.
+#         dominance_t2_1,	dominance_t2_2,	dominance_t2_3,
+#         dominance_t2_4,	dominance_t2_5,	dominance_t2_6,
+#         dominance_t2_7,	dominance_t2_8,	dominance_t2_9,
+#         dominance_t2_10,	dominance_t2_11, dominance_t2_12,
+#         dominance_t2_13,	dominance_t2_14, dominance_t2_15,
+#         
+# TIPI - Needs to be scored etc.
+#         TIPI_1,	TIPI_2,	TIPI_3,	TIPI_4,	TIPI_5,
+#         TIPI_6,	TIPI_7,	TIPI_8,	TIPI_9,	TIPI_10,
+#         
+# Mission Analysis
+#         mission_analysis_1,	mission_analysis_2,
+#         mission_analysis_3, mission_analysis_4,
+#         
+# Goal Specification
+#         goal_specification_1,	goal_specification_2,
+#         goal_specification_3,	goal_specification_4,
+#         
+# Strategy Formulation
+#         strategy_formulation_1, strategy_formulation_2,
+#         strategy_formulation_3,	strategy_formulation_4,
+#         strategy_formulation_5,
+#         
+# Monitoring Progress
+#         monitoring_progress_1,	monitoring_progress_2,
+#         monitoring_progress_3,	monitoring_progress_4,
+#      
+# Systems Monitoring
+#         systems_monitoring_1,	systems_monitoring_2,
+#         systems_monitoring_3,	systems_monitoring_4,
+#         systems_monitoring_5,
+#         
+# Team Monitoring
+#         team_monitoring_1,	team_monitoring_2,	team_monitoring_3,
+#         team_monitoring_4,	team_monitoring_5,
+#         
+# Coordination
+#        coordination_1, coordination_2,	coordination_3,
+#         coordination_4,
+#         
+# Conflict Management
+#         conflict_management_1,	conflict_management_2,
+#         conflict_management_3,	conflict_management_4,
+#         conflict_management_5,
+#         
+# Motivating
+#         motivating_1, motivating_2,	motivating_3,
+#         motivating_4, motivating_5,
+#         
+# Affect Management
+#         affect_management_1,	affect_management_2, affect_management_3,
+#         affect_management_4,	affect_management_5
