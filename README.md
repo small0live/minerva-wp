@@ -145,6 +145,9 @@ A single item workload scale (Fiore et al., 2017) was used in the study. Respons
 
 ### Team Processes
 
+See Mathieu et al. (2020):
+https://journals.sagepub.com/doi/epub/10.1177/1094428119840801
+Scoring appears to be facet averages, no reverse scoring, 1 low -5 high).
 
 ## Joggle Cognition Battery Data
 
