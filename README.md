@@ -145,9 +145,34 @@ A single item workload scale (Fiore et al., 2017) was used in the study. Respons
 
 ### Team Processes
 
-See Mathieu et al. (2020):
-https://journals.sagepub.com/doi/epub/10.1177/1094428119840801
-Scoring appears to be facet averages, no reverse scoring, 1 low -5 high).
+A measure of team process was used in the study. Specifically, the 10-item short form version of Mathieu et al. (2020)'s team process measure was adminstered to participants in the real group condition. The measure contains three subscales representing second-order tem process constructs: Transition Processes, Action Processes, and Interpersonal Processes.
+
+
+
+*Scoring*
+
+| Transition Processes |
+| Label  | Item  | Facet |
+| :------------- | :------------- | :------------- |
+| mission_analysis | Identify the key challenges that we expect to face? | Mission Analysis |
+| goal_specification | Ensure that everyone on our team clearly understands our goals? | Goal Specification |
+| strategy_formulation | Develop an overall strategy to guide our team activities? | Strategy Formulation and Planning |
+
+
+| Action Processes |
+| Label  | Item  | Facet |
+| :------------- | :------------- | :------------- |
+| monitoring_progress | Regularly monitor how well we are meeting our team goals? | Monitoring Progress Toward Goals |
+| systems_monitoring | Monitor important aspects of our work environment? | Systems Monitoring |
+| team_monitoring | Assist each other when help is needed? | Team Monitoring and Backup |
+| coordination | Coordinate our activities with one another? | Coordination |
+
+| Interpersonal Processes| 
+| Label  | Item  | Facet |
+| :------------- | :------------- | :------------- |
+| conflict_management_1 | | Conflict Management |
+| motivating_1 | | Motivating and Confidence Building |
+| affect_management_1 | | Affect Management |
 
 ## Joggle Cognition Battery Data
 
@@ -173,3 +198,5 @@ Halfhill, T., Sundstrom, E., Lahner, J., Calderone, W., & Nielsen, T. M. (2005).
 Jackson, C. L., Colquitt, J. A., Wesson, M. J., & Zapata-Phelan, C. P. (2006). Psychological collectivism: A measurement validation and linkage to group member performance. Journal of Applied Psychology, 91(4), 884.
 
 Kalma, A. P., Visser, L., & Peeters, A. (1993). Sociable and aggressive dominance: Personality differences in leadership style?. The Leadership Quarterly, 4(1), 45-64.
+
+Mathieu, J. E., Luciano, M. M., D’Innocenzo, L., Klock, E. A., & LePine, J. A. (2020). The development and construct validity of a team processes survey measure. Organizational Research Methods, 23(3), 399–431.
