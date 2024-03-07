@@ -145,13 +145,14 @@ A single item workload scale (Fiore et al., 2017) was used in the study. Respons
 
 ### Team Processes
 
-A measure of team process was used in the study. Specifically, the 10-item short form version of Mathieu et al. (2020)'s team process measure was adminstered to participants in the real group condition. The measure contains three subscales representing second-order tem process constructs: Transition Processes, Action Processes, and Interpersonal Processes.
+A measure of team process was used in the study. Specifically, the 10-item short form version of Mathieu et al. (2020)'s team process measure was adminstered to participants in the real group condition. The measure contains three subscales representing second-order tem process constructs: Transition Processes, Action Processes, and Interpersonal Processes. Responses are provided on a 5-point Likert-type scale: 1 Not at all; 2 Very litte; 3 To some extent; 4 To a great extent; 5 To a very great extent.
 
 
 
 *Scoring*
 
 | Transition Processes |
+| :------------- | :------------- | :------------- |
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
 | mission_analysis | Identify the key challenges that we expect to face? | Mission Analysis |
@@ -160,6 +161,7 @@ A measure of team process was used in the study. Specifically, the 10-item short
 
 
 | Action Processes |
+| :------------- | :------------- | :------------- |
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
 | monitoring_progress | Regularly monitor how well we are meeting our team goals? | Monitoring Progress Toward Goals |
@@ -168,11 +170,12 @@ A measure of team process was used in the study. Specifically, the 10-item short
 | coordination | Coordinate our activities with one another? | Coordination |
 
 | Interpersonal Processes| 
+| :------------- | :------------- | :------------- |
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
-| conflict_management_1 | | Conflict Management |
-| motivating_1 | | Motivating and Confidence Building |
-| affect_management_1 | | Affect Management |
+| conflict_management_1 | Deal with personal conflicts in fair and equitable ways? | Conflict Management |
+| motivating_1 | Encourage each other to perform our very best? | Motivating and Confidence Building |
+| affect_management_1 | Keep a good emotional balance in the team? | Affect Management |
 
 ## Joggle Cognition Battery Data
 
