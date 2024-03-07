@@ -151,8 +151,7 @@ A measure of team process was used in the study. Specifically, the 10-item short
 
 *Scoring*
 
-| Transition Processes |
-| :------------- | :------------- | :------------- |
+Transition Processes 
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
 | mission_analysis | Identify the key challenges that we expect to face? | Mission Analysis |
@@ -160,8 +159,7 @@ A measure of team process was used in the study. Specifically, the 10-item short
 | strategy_formulation | Develop an overall strategy to guide our team activities? | Strategy Formulation and Planning |
 
 
-| Action Processes |
-| :------------- | :------------- | :------------- |
+Action Processes 
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
 | monitoring_progress | Regularly monitor how well we are meeting our team goals? | Monitoring Progress Toward Goals |
@@ -169,8 +167,7 @@ A measure of team process was used in the study. Specifically, the 10-item short
 | team_monitoring | Assist each other when help is needed? | Team Monitoring and Backup |
 | coordination | Coordinate our activities with one another? | Coordination |
 
-| Interpersonal Processes| 
-| :------------- | :------------- | :------------- |
+Interpersonal Processes
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
 | conflict_management_1 | Deal with personal conflicts in fair and equitable ways? | Conflict Management |
