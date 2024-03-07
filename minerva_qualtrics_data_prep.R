@@ -44,7 +44,7 @@ df <- read.csv("Minerva_WP-Experiment-Pilot.csv") %>% # this is our Qualtrics fi
                     "collectivism",
                     "dominance",
                     "stress", 
-                    "workload",
+                    #"workload",
                     "rme",
                     "TIPI",
                     "mission_analysis",
@@ -78,7 +78,7 @@ sapply(df, class) # apply class(), which returns data type, to all columns in th
 ### so we need to convert survey responses to numeric format 
 ### ID columns (StartDate, session, Condition, pid) are fine as they are for now
 
-col_nums <- c(5:153) # create a vector for the column numbers we want make numeric
+col_nums <- c(5:152) # create a vector for the column numbers we want make numeric
 
 df[col_nums] <- sapply(df[col_nums], as.numeric)  # apply as.numeric() to a subset of columns, specifically the column numbers in the vector we just made
 sapply(df, class) # make sure it worked
@@ -88,7 +88,6 @@ sapply(df, class) # make sure it worked
 skim(df)
 
 rm(col_nums) # remove vector from global environment (we don't need it anymore)
-
 
 # Get Reliability for Collectivism Scale ----------------------------------
 
@@ -212,7 +211,8 @@ df <- df %>%
          TIPI_Openness_score = select(., c("TIPI_5", "TIPI_10")) %>% rowMeans(),
          TIPI_EmotionalStability_score = select(., c("TIPI_4", "TIPI_9")) %>% rowMeans(),
          rmet_correct_count = select(., starts_with("rme")) %>% rowSums(),
-         rmet_correct_prop = rmet_correct_count/36
+         rmet_correct_prop = rmet_correct_count/36,
+         
          )
 
 
@@ -222,8 +222,6 @@ df <- df %>%
 # Conscientiousness: TIPI_3, TIPI_8
 # Openness to Experiences: TIPI_5, TIPI_10
 # Emotional Stability: TIPI_4, TIPI_9
-
-
 
 # Save Data ---------------------------------------------------------------
 
