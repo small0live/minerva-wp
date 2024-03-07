@@ -170,9 +170,9 @@ Action Processes
 Interpersonal Processes
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
-| conflict_management_1 | Deal with personal conflicts in fair and equitable ways? | Conflict Management |
-| motivating_1 | Encourage each other to perform our very best? | Motivating and Confidence Building |
-| affect_management_1 | Keep a good emotional balance in the team? | Affect Management |
+| conflict_management| Deal with personal conflicts in fair and equitable ways? | Conflict Management |
+| motivating | Encourage each other to perform our very best? | Motivating and Confidence Building |
+| affect_management | Keep a good emotional balance in the team? | Affect Management |
 
 ## Joggle Cognition Battery Data
 
