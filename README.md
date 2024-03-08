@@ -177,7 +177,7 @@ Interpersonal Processes
 
 ## Joggle Cognition Battery Data
 
-The Joggle application was used to administer a cognition test battery. The battery contains 9 tests that were adminstered to all participants in the study. 
+The [Joggle application](https://joggleresearch.com/) was used to administer a cognition test battery. The battery contains 9 tests that were adminstered to all participants in the study. 
 
 ### Motor Praxis Task
 * Domain: sensory motor speed
