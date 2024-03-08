@@ -177,7 +177,24 @@ Interpersonal Processes
 
 ## Joggle Cognition Battery Data
 
-The Joggle application was used to administer a cognition test battery. The battery contains # tests:
+The Joggle application was used to administer a cognition test battery. The battery contains 9 tests that were adminstered to all participants in the study:
+
+* Motor Praxis Task
+  * Domain: sensory motor speed
+* Visual Object Learning Task
+  * Domain: visual learning and spatial working memory
+* NBACK
+  * Domain: working memory
+* Abstract Matching
+  * Domain: abstraction
+* Line Orientation Test
+  * Domain: spatial orientation
+* Digital Symbol Substitution Task
+  * Domain: complex scanning and visual tracking
+* Balloon Analog Risk Task
+  * Domain: risk decision making
+* Psychomotor Vigilience Test
+  * Domain: vigilience and attention
 
 ### 
 
