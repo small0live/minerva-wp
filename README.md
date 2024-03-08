@@ -149,7 +149,7 @@ A measure of team process was used in the study. Specifically, the 10-item short
 
 *Scoring*
 
-Responses are provided on a 5-point Likert-type scale: 1 Not at all; 2 Very litte; 3 To some extent; 4 To a great extent; 5 To a very great extent. The group mean of each subscale is used to calculate the extent to which the team engaged in effective team processes over some period in time.
+Responses are provided on a 5-point Likert-type scale: 1 = Not at all; 2 = Very litte; 3 = To some extent; 4 = To a great extent; 5 = To a very great extent. The group mean of each subscale is used to calculate the extent to which the team engaged in effective team processes over some period in time.
 
 
 Transition Processes 
@@ -179,24 +179,30 @@ Interpersonal Processes
 
 The Joggle application was used to administer a cognition test battery. The battery contains 9 tests that were adminstered to all participants in the study:
 
-* Motor Praxis Task
-  * Domain: sensory motor speed
-* Visual Object Learning Task
-  * Domain: visual learning and spatial working memory
-* NBACK
-  * Domain: working memory
-* Abstract Matching
-  * Domain: abstraction
-* Line Orientation Test
-  * Domain: spatial orientation
-* Digital Symbol Substitution Task
-  * Domain: complex scanning and visual tracking
-* Balloon Analog Risk Task
-  * Domain: risk decision making
-* Psychomotor Vigilience Test
-  * Domain: vigilience and attention
+### Motor Praxis Task
+* Domain: sensory motor speed
 
-### 
+### Visual Object Learning Task
+* Domain: visual learning and spatial working memory
+
+### NBACK
+* Domain: working memory
+
+### Abstract Matching
+* Domain: abstraction
+
+### Line Orientation Test
+* Domain: spatial orientation
+
+### Digital Symbol Substitution Task
+* Domain: complex scanning and visual tracking
+
+### Balloon Analog Risk Task
+* Domain: risk decision making
+
+### Psychomotor Vigilience Test
+* Domain: vigilience and attention
+
 
 
 
