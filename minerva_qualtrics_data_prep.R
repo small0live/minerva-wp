@@ -78,7 +78,7 @@ sapply(df, class) # apply class(), which returns data type, to all columns in th
 ### so we need to convert survey responses to numeric format 
 ### ID columns (StartDate, session, Condition, pid) are fine as they are for now
 
-col_nums <- c(5:120) # create a vector for the column numbers we want make numeric
+col_nums <- c(5:121) # create a vector for the column numbers we want make numeric
 
 df[col_nums] <- sapply(df[col_nums], as.numeric)  # apply as.numeric() to a subset of columns, specifically the column numbers in the vector we just made
 
@@ -175,8 +175,30 @@ rm(socialdom_t1, socialdom_t2, aggdom_t1, aggdom_t2, dominance_t1, dominance_t2)
 
 transition <- df %>% select(contains(c("mission_analysis",
                                        "goal_specification",
-                                       "strategy_formulation")))
+                                       "strategy_formulation"))) %>% na.omit()
 
+alpha(transition, check.keys = TRUE)
+
+####
+### action processes
+####
+
+action <- df %>% select(contains(c("monitoring_progress",
+                                   "systems_monitoring",
+                                   "team_monitoring",
+                                   "coordination"))) %>% na.omit()
+
+alpha(action, check.keys = TRUE)
+
+####
+### interpersonal processes
+####
+
+interpersonal <- df %>% select(contains(c("conflict_management",
+                                       "motivating",
+                                       "affect_management"))) %>% na.omit()
+
+alpha(interpersonal, check.keys = TRUE)
 
 # Reverse Score Items -----------------------------------------------------
 
@@ -207,6 +229,49 @@ df[tipi_r] <- sapply(df[tipi_r], FUN = function(foo) recode(foo, # foo is placeh
 df[tipi_r]
 
 rm(tipi_r) # remove vector from global environment (we don't need it anymore)
+
+
+# Get Reliability for TIPI ------------------------------------------------
+
+####
+### extraversion 
+####
+
+extraversion <- df %>% select((c("TIPI_1", "TIPI_6")))
+
+alpha(extraversion, check.keys = TRUE)
+
+####
+### agreeableness 
+####
+
+agreeableness <- df %>% select((c("TIPI_2", "TIPI_7")))
+
+alpha(agreeableness, check.keys = TRUE)
+
+####
+### conscientious 
+####
+
+conscientious <- df %>% select((c("TIPI_3", "TIPI_8")))
+
+alpha(conscientious, check.keys = TRUE)
+
+####
+### openness 
+####
+
+openness <- df %>% select((c("TIPI_5", "TIPI_10")))
+
+alpha(openness, check.keys = TRUE)
+
+####
+### emotional stability 
+####
+
+emostab <- df %>% select((c("TIPI_4", "TIPI_9")))
+
+alpha(emostab, check.keys = TRUE)
 
 
 # Compute Scale and Facet/Subscale Scores ---------------------------------
