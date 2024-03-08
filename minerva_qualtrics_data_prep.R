@@ -30,7 +30,7 @@ setwd("~/Documents/CSL/Minerva/Word_Puzzles_Experiment/minerva-wp") # update bas
 
 ### now we can import the data file 
 
-df <- read.csv("Minerva_WP-Experiment-Pilot.csv") %>% # this is our Qualtrics file
+df <- read.csv("Minerva_WP-Experiment-Pilot_8March2024.csv") %>% # this is our Qualtrics file
   # %>% is the pipe operator, it connects different pieces of code; we're using it to apply the below functions to the above data in sequence
   slice(-c(1, 2)) %>% # we don't need the extra header rows provided by Qualtrics so we're removing them: we use c() to create/refer to a vector of row numbers we want removed and minus sign to indicate removal
   subset(Progress == 100 & pid %like% "MP" & StartDate > "2023-11-15 00:00:00") %>% # we can use subset() to conditionally select rows based on column values
@@ -43,18 +43,18 @@ df <- read.csv("Minerva_WP-Experiment-Pilot.csv") %>% # this is our Qualtrics fi
                     "pid", 
                     "collectivism",
                     "dominance",
-                    "stress", 
-                    #"workload",
+                    "stress",
                     "rme",
                     "TIPI",
                     "mission_analysis",
+                    "goal_specification",
                     "strategy_formulation",
                     "monitoring_progress",
+                    "systems_monitoring",
                     "team_monitoring",
                     "coordination",
                     "conflict_management",
                     "motivating",
-                    "goal_specification",
                     "affect_management")))
 
 
@@ -78,21 +78,22 @@ sapply(df, class) # apply class(), which returns data type, to all columns in th
 ### so we need to convert survey responses to numeric format 
 ### ID columns (StartDate, session, Condition, pid) are fine as they are for now
 
-col_nums <- c(5:152) # create a vector for the column numbers we want make numeric
+col_nums <- c(5:120) # create a vector for the column numbers we want make numeric
 
 df[col_nums] <- sapply(df[col_nums], as.numeric)  # apply as.numeric() to a subset of columns, specifically the column numbers in the vector we just made
+
 sapply(df, class) # make sure it worked
 
 ### now let's check the data at the column level
 
 skim(df)
 
-rm(col_nums) # remove vector from global environment (we don't need it anymore)
+rm(col_nums) # we can remove this vector from the global environment (we don't need it anymore)
 
 # Get Reliability for Collectivism Scale ----------------------------------
 
 
-### collectivism was measured at two time points, we so check both measurements separately
+### collectivism was measured at two time points, so we check both measurements separately
 
 ### time 1 measurement
 
@@ -164,6 +165,18 @@ alpha(aggdom_t2, check.keys = TRUE) # raw alpha is 0.72
 
 
 rm(socialdom_t1, socialdom_t2, aggdom_t1, aggdom_t2, dominance_t1, dominance_t2)
+
+
+# Get Reliability for Team Process Scales ---------------------------------
+
+####
+### transition processes
+####
+
+transition <- df %>% select(contains(c("mission_analysis",
+                                       "goal_specification",
+                                       "strategy_formulation")))
+
 
 # Reverse Score Items -----------------------------------------------------
 

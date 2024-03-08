@@ -155,29 +155,29 @@ Responses are provided on a 5-point Likert-type scale: 1 = Not at all; 2 = Very 
 Transition Processes 
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
-| mission_analysis | Identify the key challenges that we expect to face? | Mission Analysis |
-| goal_specification | Ensure that everyone on our team clearly understands our goals? | Goal Specification |
-| strategy_formulation | Develop an overall strategy to guide our team activities? | Strategy Formulation and Planning |
+| mission_analysis_1 | Identify the key challenges that we expect to face? | Mission Analysis |
+| goal_specification_1 | Ensure that everyone on our team clearly understands our goals? | Goal Specification |
+| strategy_formulation_1 | Develop an overall strategy to guide our team activities? | Strategy Formulation and Planning |
 
 
 Action Processes 
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
-| monitoring_progress | Regularly monitor how well we are meeting our team goals? | Monitoring Progress Toward Goals |
-| systems_monitoring | Monitor important aspects of our work environment? | Systems Monitoring |
-| team_monitoring | Assist each other when help is needed? | Team Monitoring and Backup |
-| coordination | Coordinate our activities with one another? | Coordination |
+| monitoring_progress_1 | Regularly monitor how well we are meeting our team goals? | Monitoring Progress Toward Goals |
+| systems_monitoring_1 | Monitor important aspects of our work environment? | Systems Monitoring |
+| team_monitoring_1 | Assist each other when help is needed? | Team Monitoring and Backup |
+| coordination_1 | Coordinate our activities with one another? | Coordination |
 
 Interpersonal Processes
 | Label  | Item  | Facet |
 | :------------- | :------------- | :------------- |
-| conflict_management| Deal with personal conflicts in fair and equitable ways? | Conflict Management |
-| motivating | Encourage each other to perform our very best? | Motivating and Confidence Building |
-| affect_management | Keep a good emotional balance in the team? | Affect Management |
+| conflict_management_1| Deal with personal conflicts in fair and equitable ways? | Conflict Management |
+| motivating_1 | Encourage each other to perform our very best? | Motivating and Confidence Building |
+| affect_management_1 | Keep a good emotional balance in the team? | Affect Management |
 
 ## Joggle Cognition Battery Data
 
-The Joggle application was used to administer a cognition test battery. The battery contains 9 tests that were adminstered to all participants in the study:
+The Joggle application was used to administer a cognition test battery. The battery contains 9 tests that were adminstered to all participants in the study. 
 
 ### Motor Praxis Task
 * Domain: sensory motor speed
