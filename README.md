@@ -2,7 +2,8 @@
  
 This repo contains R code files and documentation for data preparation and summarization associated with the word puzzles experiment conducted under the Minerva project. Supplementary information about the data is available in [this Google Sheet](https://docs.google.com/spreadsheets/d/156uiHYXigYihKN6WHiC477xpLJ7OpeY8GpnTeZHYblo/edit?usp=sharing).
 
-The experimental task consist of a set of word puzzles which vary along two dimensions: problem structure and solution space. Participants were randomly assigned to one of two conditions: real group or nominal group. In the real group condition, participants work together in a 3-person team to complete the puzzles. In the nominal group condition, participants work indepedently to complete the puzzles. 
+The experimental task consists of a set of word puzzles which vary along two dimensions: problem structure and solution space. Participants were randomly assigned to one of two conditions: real group or nominal group. In the real group condition, participants work together in a 3-person team to complete the puzzles. In the nominal group condition, participants work indepedently to complete the puzzles. 
+
 
  ## Qualtrics Survey Data
 
