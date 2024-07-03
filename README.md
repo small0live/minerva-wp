@@ -1,6 +1,8 @@
 # Minerva Project: Word Puzzles Experiment Data
  
- This repo contains R code files for data preparation and summarization associated with the word puzzles experiment conducted under the Minerva project. Supplementary information about the data is available in [this Google Sheet](https://docs.google.com/spreadsheets/d/156uiHYXigYihKN6WHiC477xpLJ7OpeY8GpnTeZHYblo/edit?usp=sharing).
+This repo contains R code files and documentation for data preparation and summarization associated with the word puzzles experiment conducted under the Minerva project. Supplementary information about the data is available in [this Google Sheet](https://docs.google.com/spreadsheets/d/156uiHYXigYihKN6WHiC477xpLJ7OpeY8GpnTeZHYblo/edit?usp=sharing).
+
+The experimental task consist of a set of word puzzles which vary along two dimensions: problem structure and solution space. Participants were randomly assigned to one of two conditions: real group or nominal group. In the real group condition, participants work together in a 3-person team to complete the puzzles. In the nominal group condition, participants work indepedently to complete the puzzles. 
 
  ## Qualtrics Survey Data
 
@@ -41,7 +43,7 @@ Mean ratings, at the scale or facet level, are used to determine level of collec
 
 ### Sociable and Aggressive Dominance
 
-A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The measure captures two distinct forms of dominance: sociable (8 items) and aggressive (7 items). Dominance was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I have no problems talking in front of a group.*", the data are labeled dominance_t1_1 and dominance_t2_1 to represent time 1 and time 2 measurements, respectively. 
+A 15-item measure of dominance (Kalma et al., 1993) was used in the study. The measure captures two forms of dominance: sociable (8 items) and aggressive (7 items). Dominance was measured at two points in the study. The data labels include information about measurement time. For example, for the item "*I have no problems talking in front of a group.*", the data are labeled dominance_t1_1 and dominance_t2_1 to represent time 1 and time 2 measurements, respectively. 
 
 | Label  | Item  | Subscale |
 | :------------- | :------------- | :------------- |
@@ -69,9 +71,7 @@ Responses are provided on a 7-point Likert-type scale ranging from strongly disa
 
 ### Theory of Mind
 
-
-Individual differences in mentalizing ability was assessed using the 36-item Reading the Mind in the Eyes Test (Baron-Cohen et al., 2001). For each item, a pair of eyes is displayed and participants choose one of four word options that describes the
-expression being conveyed.  
+Individual differences in mentalizing ability was assessed using the 36-item Reading the Mind in the Eyes Test (Baron-Cohen et al., 2001). For each item, a pair of eyes is displayed and participants choose one of four word options that describe the expression being conveyed.  
 
 *Scoring*
 
@@ -88,7 +88,7 @@ Responses are scored as correct (1) or incorrect (0), and the percentage correct
 
 ### Personality
 
-The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues (2003) was used in the study. The TIPI is used to measure the Big-Five personality dimensions: Extraversion, Agreeableness, Conscientiousness, Emotional Stability, Openness to Experiences.
+The Ten Item Personality Inventory (TIPI) developed by Gosling and colleagues (2003) was used in the study. The TIPI is used to measure the Big Five personality dimensions: Extraversion, Agreeableness, Conscientiousness, Emotional Stability, Openness to Experiences.
 
 *Scoring*
 
@@ -140,12 +140,14 @@ A validated single item stress scale (Booth et al., 2022) was used in the study.
 
 ### Workload
 
-A single item workload scale (Fiore et al., 2017) was used in the study. Responses to the question "*How easy or difficult was it to complete the task?*" are provided on a 7-point Likert-type scale ranging from very easy (1) to very difficult (7).
+A single item workload scale (Fiore et al., 2017) was used in the study. Responses to the question "*How easy or difficult was it to complete the task?*" are provided on a 7-point Likert-type scale ranging from very easy (1) to very difficult (7). This item was adminstered after each word puzzle, for a total of four adminstrations.
+
+*Note: responses to this item were provided on paper (i.e., not on Qualtrics).*
 
 
 ### Team Processes
 
-A measure of team process was used in the study. Specifically, the 10-item short form version of Mathieu et al. (2020)'s team process measure was adminstered to participants in the real group condition. The measure contains three subscales representing second-order team process constructs: Transition Processes, Action Processes, and Interpersonal Processes. 
+A measure of team process was used in the study. Specifically, the 10-item short-form version of Mathieu et al. (2020)'s team process measure was adminstered to participants in the real group condition. The measure contains three subscales representing second-order team process constructs: Transition Processes, Action Processes, and Interpersonal Processes. 
 
 *Scoring*
 
@@ -175,9 +177,10 @@ Interpersonal Processes
 | motivating_1 | Encourage each other to perform our very best? | Motivating and Confidence Building |
 | affect_management_1 | Keep a good emotional balance in the team? | Affect Management |
 
+
 ## Joggle Cognition Battery Data
 
-The [Joggle application](https://joggleresearch.com/) was used to administer a cognition test battery. The battery contains 9 tests that were adminstered to all participants in the study. 
+The [Joggle application](https://joggleresearch.com/) was used to administer a cognition test battery. Each participant completed the battery on an Apple iPad. The battery contains 9 tests which are listed below. 
 
 ### Motor Praxis Task
 * Domain: sensory motor speed
@@ -203,13 +206,14 @@ The [Joggle application](https://joggleresearch.com/) was used to administer a c
 ### Psychomotor Vigilience Test
 * Domain: vigilience and attention
 
+### Scoring
 
+The Joggle application provides score data for each test. These data can only be accessed and downloaded through a web-based login to their admin interface. No data are accessible via the mobile application.
 
 
 ## References
 
 Baron-Cohen, S., Wheelwright, S., Hill, J., Raste, Y., & Plumb, I. (2001). The “Reading the Mind in the Eyes” Test Revised Version: A study with normal adults, and adults with Asperger Syndrome or high-functioning Autism. The Journal of Child Psychology and Psychiatry and Allied Disciplines, 42(2), 241–251.
-
 
 Booth, B. M., Vrzakova, H., Mattingly, S. M., Martinez, G. J., Faust, L., & D’Mello, S. K. (2022). Toward robust stress prediction in the age of wearables: Modeling perceived stress in a longitudinal study With information workers. IEEE Transactions on Affective Computing, 13(4), 2201–2217.
 
