@@ -6,7 +6,7 @@ The experimental task consists of a set of word puzzles which vary along two dim
 
 <div align="center">
 <figure>
-  <img src="img/wp_exp_flow.png" width=80% height=80%>
+  <img src="img/wp_exp_flow.png" width=100% height=100%>
   <p></p>
   <figcaption>Study flow.</figcaption>
 </figure>
