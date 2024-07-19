@@ -4,6 +4,13 @@ This repo contains R code files and documentation for data preparation and summa
 
 The experimental task consists of a set of word puzzles which vary along two dimensions: problem structure and solution space. Participants were randomly assigned to one of two conditions: real group or nominal group. In the real group condition, participants worked together in a 3-person team to complete the puzzles. In the nominal group condition, participants worked independently to complete the puzzles. 
 
+<div align="center">
+<figure>
+  <img src="img/wp_exp_flow.png" width=70% height=70%>
+  <p></p>
+  <figcaption>Study flow.</figcaption>
+</figure>
+</div>
 
  ## Qualtrics Survey Data
 
