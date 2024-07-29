@@ -253,16 +253,23 @@ dev.off()
 # Run Two-Way ANOVA: Does puzzle type predict performance?
 ####
 
-# create the model
+# create the regression model
+# Type III (Marginal) Sums of Squares is used by default in lm
+mod1 <- lm(Score ~ ProblemStructure * SolutionSpace, 
+            data = performance_long)
+
+# get coefficients for specified contrasts
+summary(mod1)
+
+# get ANOVA table
 mod1 <- aov(Score ~ ProblemStructure * SolutionSpace, 
-                data = performance_long)
+           data = performance_long)
+
+summary(mod1) 
 
 # check residuals
 res1 <- resid(mod1)
 plot(density(res1))
-
-# print model summary
-summary(mod1) 
 
 # post hoc analysis
 TukeyHSD(mod1)
