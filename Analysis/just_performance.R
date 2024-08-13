@@ -12,7 +12,7 @@ library(tidyverse)
 
 # Import Data -------------------------------------------------------------
 
-## set working directory
+## set working directory (tell R where the data is)
 setwd("~/Documents/CSL/Minerva/Word_Puzzles_Experiment/minerva-wp/data")
 
 ## import csv file as data frame
@@ -73,6 +73,7 @@ ggplot(perform,
         axis.title.x = element_blank(),
         plot.title = element_text(hjust = 0.5, face = "bold", size = 18))
 
+
 ## create bar plot: condition means
 ggplot(perform,
        aes(x = Puzzle,  fill = Puzzle,
@@ -95,17 +96,21 @@ ggplot(perform,
         plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
         panel.grid.major.x = element_blank())
 
+
 ####
 ## viz for real group condition only
 ####
 
+## keep only real group data
 rg_only <- perform %>% subset(Condition_categorical == "Real Group")
 
+## getting RG ID for sorted plot later
 rg_only <- rg_only %>% 
   mutate(sort_id = sub("^\\D+(\\d)", "\\1", rg_only$GroupID))
 
 rg_only$sort_id <- as.numeric(rg_only$sort_id)
 
+## create bar plot: group means
 ggplot(rg_only,
        aes(x = Puzzle,  fill = Puzzle,
            y = Score)) +
@@ -133,74 +138,12 @@ ggplot(rg_only,
 
 # Get Descriptive Stats ---------------------------------------------------
 
+## using functions from rstatix package here + onward (as indicated by rstatix::)
 
+## mean and sd
 perform %>%
   group_by(Condition_categorical, Puzzle) %>%
   rstatix::get_summary_stats(Score, type = "mean_sd")
-
-
-# Check Stat Assumptions --------------------------------------------------
-
-
-perform %>%
-  group_by(Condition_categorical, ProblemStructure, SolutionSpace) %>%
-  rstatix::identify_outliers(Score)
-
-perform %>%
-  group_by(Condition_categorical, ProblemStructure, SolutionSpace) %>%
-  rstatix::shapiro_test(Score)
-
-
-ggpubr::ggqqplot(perform, "Score", ggtheme = theme_bw()) +
-  facet_grid(Puzzle ~ Condition_categorical, labeller = "label_both")
-
-perform %>%
-  group_by(ProblemStructure, SolutionSpace) %>%
-  rstatix::levene_test(Score ~ Condition_categorical)
-
-
-# Run RM Mixed ANOVA ------------------------------------------------------
-
-
-res.aov <- rstatix::anova_test(
-  data = perform, dv = Score, wid = GroupID, between = Condition_categorical,
-  within = c(ProblemStructure, SolutionSpace)
-  )
-
-rstatix::get_anova_table(res.aov)
-
-
-# Post Hoc Analysis -------------------------------------------------------
-
-# Effect of group at each time point
-one.way <- perform %>%
-  group_by(ProblemStructure) %>%
-  rstatix::anova_test(dv = Score, wid = GroupID, between = Condition_categorical) %>%
-  rstatix::get_anova_table() %>%
-  rstatix::adjust_pvalue(method = "bonferroni")
-
-one.way
-
-one.way <- perform %>%
-  group_by(SolutionSpace) %>%
-  rstatix::anova_test(dv = Score, wid = GroupID, between = Condition_categorical) %>%
-  rstatix::get_anova_table() %>%
-  rstatix::adjust_pvalue(method = "bonferroni")
-
-one.way
-
-
-pwc <- perform %>%
-  group_by(ProblemStructure) %>%
-  rstatix::pairwise_t_test(Score ~ Condition_categorical, p.adjust.method = "bonferroni")
-
-pwc
-
-pwc <- perform %>%
-  group_by(SolutionSpace) %>%
-  rstatix::pairwise_t_test(Score ~ Condition_categorical, p.adjust.method = "bonferroni")
-
-pwc
 
 
 perform %>%
@@ -210,3 +153,71 @@ perform %>%
 perform %>%
   group_by(Condition_categorical, SolutionSpace) %>%
   rstatix::get_summary_stats(Score, type = "mean_sd")
+
+
+# Check Stat Assumptions --------------------------------------------------
+
+## check outliers
+perform %>%
+  group_by(Condition_categorical, ProblemStructure, SolutionSpace) %>%
+  rstatix::identify_outliers(Score)
+
+## check normality
+perform %>%
+  group_by(Condition_categorical, ProblemStructure, SolutionSpace) %>%
+  rstatix::shapiro_test(Score)
+
+## check normality (visually)
+ggpubr::ggqqplot(perform, "Score", ggtheme = theme_bw()) +
+  facet_grid(Puzzle ~ Condition_categorical, labeller = "label_both")
+
+## check homogeneity of variances
+perform %>%
+  group_by(ProblemStructure, SolutionSpace) %>%
+  rstatix::levene_test(Score ~ Condition_categorical)
+
+
+# Run RM Mixed ANOVA ------------------------------------------------------
+
+## create model
+res.aov <- rstatix::anova_test(
+  data = perform, dv = Score, wid = GroupID, between = Condition_categorical,
+  within = c(ProblemStructure, SolutionSpace)
+  )
+
+## print ANOVA table
+rstatix::get_anova_table(res.aov)
+
+
+# Post Hoc Analysis -------------------------------------------------------
+
+## effect of group at each time point
+one.way <- perform %>%
+  group_by(ProblemStructure) %>%
+  rstatix::anova_test(dv = Score, wid = GroupID, between = Condition_categorical) %>%
+  rstatix::get_anova_table() %>%
+  rstatix::adjust_pvalue(method = "bonferroni")
+
+one.way
+
+one.way <- perform %>%
+  group_by(SolutionSpace) %>%
+  rstatix::anova_test(dv = Score, wid = GroupID, between = Condition_categorical) %>%
+  rstatix::get_anova_table() %>%
+  rstatix::adjust_pvalue(method = "bonferroni")
+
+one.way
+
+## pairwise comparisons
+pwc <- perform %>%
+  group_by(ProblemStructure) %>%
+  rstatix::pairwise_t_test(Score ~ Condition_categorical, p.adjust.method = "bonferroni")
+
+pwc
+
+pwc <- perform %>%
+  group_by(SolutionSpace) %>%
+  rstatix::pairwise_t_test(Score ~ Condition_categorical, p.adjust.method = "bonferroni")
+
+pwc
+
