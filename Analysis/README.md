@@ -41,3 +41,17 @@ Before running the script, ensure that the working directory and file name speci
 
 ## Task Difficulty
 
+### Data
+
+Difficulty data are stored in Google Drive:
+
+Minerva > Experiments > 1.1 Word Puzzles Experiment > Data Analysis > Word Puzzle Difficulty Ratings (Subjective Workload).
+
+The DifficultyRatings_Completes sheet in the above mentioned file can be used with R script described below. The DifficultyRatings_Processed sheet was generated using the first half of the script described below.
+
+### R Script
+
+A script for preparing, visualzing, and analyzing performance data is provided: just_difficulty.R. Data downloaded using the above instruction can be used with this script.
+
+Before running the script, ensure that the working directory and file name specified align with your local settings.
+
