@@ -155,11 +155,11 @@ A single item workload scale (Fiore et al., 2017) was used in the study. Respons
 
 ### Team Processes
 
-A measure of team process was used in the study. Specifically, the 10-item short-form version of Mathieu et al. (2020)'s team process measure was adminstered to participants in the real group condition. The measure contains three subscales representing second-order team process constructs: Transition Processes, Action Processes, and Interpersonal Processes. 
+A measure of team process was used in the study. Specifically, the 10-item short-form version of Mathieu et al. (2020)'s team process measure was administered to participants in the real group condition. The measure contains three subscales representing second-order team process constructs: Transition Processes, Action Processes, and Interpersonal Processes. 
 
 *Scoring*
 
-Responses are provided on a 5-point Likert-type scale: 1 = Not at all; 2 = Very litte; 3 = To some extent; 4 = To a great extent; 5 = To a very great extent. The group mean of each subscale is used to calculate the extent to which the team engaged in effective team processes over some period in time.
+Responses are provided on a 5-point Likert-type scale: 1 = Not at all; 2 = Very little; 3 = To some extent; 4 = To a great extent; 5 = To a very great extent. The group mean of each subscale is used to calculate the extent to which the team engaged in effective team processes over some period in time.
 
 
 Transition Processes 
